@@ -10,3 +10,9 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+
+
+*.zip
+*.DS_Store
+*.gitignore
+*.mp4
