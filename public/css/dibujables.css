@@ -25,3 +25,6 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+.txt_font {
+    font-size: 18px;
+}
