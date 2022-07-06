@@ -17,7 +17,7 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('css/dibujables.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/dibujables.css') }}" rel="stylesheet">
     <style>
 
     </style>
@@ -28,7 +28,7 @@
     <div class="row flex-wrap">
         <!-- Navigation -->
         <div class="mr-auto">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav">
                         <li class="nav-item active">
