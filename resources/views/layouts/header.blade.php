@@ -4,52 +4,74 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    {{-- bootstrap --}}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-    </script>
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/dibujables.css') }}" rel="stylesheet">
+    <!-- font awesome -->
+    <link type="text/css" rel="stylesheet" href="{{ mix('css/app.css') }}">
     <style>
+        header .list_ico_share_f a {
+            color: #FFF;
+        }
 
+        .menu_head {
+            border-color: #8793ad !important;
+            border-bottom: solid 2px;
+            min-height: 73px;
+            padding: 5px 0;
+        }
+
+        .menu_head .nav-item.active {
+            font-weight: 700;
+            background-color: #539bfd;
+        }
+
+        .menu_head .nav-item {
+            margin-right: .9rem;
+        }
+
+        .menu_head .nav-item a {
+            color: #fff;
+            padding: 0.35rem 0.9rem !important;
+        }
+
+        .banner_head_home {
+            padding-top: 73px;
+        }
     </style>
     @yield('styles')
 </head>
 
 <body>
-    <div class="row flex-wrap">
-        <!-- Navigation -->
-        <div class="mr-auto">
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Reyma</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#">Contáctanos</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-        <!-- Social Share -->
-        <div class="col-md-4 text-center">
-            <div class="row d-flex justify-content-center">
-                <div class="socials">
-                    @include('layouts.socialshare')
+    <header class="container-md fixed-top">
+        <div class="menu_head row flex-wrap">
+            <!-- Navigation -->
+            <div class="col-auto me-auto navbar align-items-end">
+                <nav class="navbar-expand-lg">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Reyma</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled" href="#">Contáctanos</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <!-- Social Share -->
+            <div class="col-auto text-center d-flex align-items-end">
+                <div class="row d-flex justify-content-center">
+                    <div class="socials">
+                        @include('layouts.socialshare')
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </header>

@@ -4,4 +4,5 @@
 <!-- Main Content -->
 <div class="container-fluid">
     @yield('content')
-    @yield('footer')
+</div>
+@yield('footer')
