@@ -28,3 +28,37 @@
 .txt_font {
     font-size: 18px;
 }
+footer .list_ico_share_f a {
+    color: #052453;
+}
+.socialM > li {
+    font-size: 1.3em;
+}
+footer .socialM > li {
+    font-size: 1.7em;
+}
+.socialM > li {
+    border: none;
+    padding: 0.5rem 0.5rem;
+    font-size: 1.3em;
+}
+/* Buscar */
+.buscador_newsroom input {
+    border: none;
+    border-bottom: solid 2px #8793ad;
+    border-radius: 0px !important;
+    color: #fff !important;
+}
+.buscador_newsroom input::placeholder {
+    color: #fff;
+    font-size: 18px;
+}
+.buscador_newsroom #search-addon {
+    background: #fff0;
+    border-width: 0 0 2px 0;
+    border-bottom: solid 2px #8793ad;
+    border-radius: 0px !important;
+}
+.buscador_newsroom #search-addon i::before {
+    color: #fff;
+}
