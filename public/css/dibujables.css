@@ -1,3 +1,10 @@
+/*
+Colores
+#052453 - Azul fondos
+#8793ad - dibujables
+#f4f4f4 - fondos
+#539bfd - botones
+*/
 @font-face {
     font-family: "social-icons";
     src: url("../fonts/social-icons.eot");
@@ -25,18 +32,43 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+body {
+    font-size: 18px;
+}
+/* fuentes */
 .txt_font {
     font-size: 18px;
 }
-footer .list_ico_share_f a {
+/* footer */
+footer {
+    border-top: solid 5px #539bfd;
     color: #052453;
 }
-.socialM > li {
-    font-size: 1.3em;
+.row_f2 .list_ico_share_f a {
+    color: #052453;
 }
-footer .socialM > li {
+.row_f2 .socialM > li {
     font-size: 1.7em;
 }
+.row_f3 p:first-of-type {
+    position: relative;
+    padding-bottom: 0.8rem;
+}
+.row_f3 p:first-of-type::before {
+    content: "";
+    position: absolute;
+    width: 30%;
+    height: 2px;
+    background-color: #8793ad;
+    bottom: calc(-0.1rem - 2px);
+    right: 0;
+}
+.bold_txt_foo a {
+    font-weight: 800;
+    color: #052453;
+    text-decoration: none;
+}
+/* socialshare */
 .socialM > li {
     border: none;
     padding: 0.5rem 0.5rem;
@@ -61,4 +93,24 @@ footer .socialM > li {
 }
 .buscador_newsroom #search-addon i::before {
     color: #fff;
+}
+/* mailing */
+.btn_mailing_news {
+    background-color: #539bfd;
+    border-radius: 0;
+    color: #fff;
+    font-weight: 700;
+    padding: 0.7rem 3.9rem;
+    font-size: 18px;
+}
+.emailing h2 {
+    color: #052453;
+    font-weight: 700;
+    font-size: 1.77rem;
+}
+.frm_news input {
+    border-color: #000;
+    border-radius: 0;
+    font-size: 18px;
+    padding: 0.555rem 0.75rem;
 }

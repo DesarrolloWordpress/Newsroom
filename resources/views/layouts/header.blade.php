@@ -12,6 +12,15 @@
     <!-- font awesome -->
     <link type="text/css" rel="stylesheet" href="{{ mix('css/app.css') }}">
     <style>
+        header,
+        header .list_ico_share_f a,
+        .menu_head .nav-item a,
+        .menu_head {
+            -webkit-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+        }
+
         header .list_ico_share_f a {
             color: #FFF;
         }
@@ -37,6 +46,27 @@
             padding: 0.35rem 0.9rem !important;
         }
 
+        /* onScroll */
+        header.active {
+            background-color: #FFF;
+            border-color: #8793ad !important;
+            border-bottom: solid 2px;
+        }
+
+        header.active .list_ico_share_f a {
+            color: #052453;
+        }
+
+        .active .menu_head .nav-item:not(.menu_head .nav-item.active) a {
+            color: #052453;
+        }
+
+        .active .menu_head {
+            border-bottom: none;
+        }
+
+        /* end onScroll */
+
         .banner_head_home {
             padding-top: 73px;
         }
@@ -45,31 +75,33 @@
 </head>
 
 <body>
-    <header class="container-md fixed-top">
-        <div class="menu_head row flex-wrap">
-            <!-- Navigation -->
-            <div class="col-auto me-auto navbar align-items-end">
-                <nav class="navbar-expand-lg">
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Reyma</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link disabled" href="#">Contáctanos</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-            <!-- Social Share -->
-            <div class="col-auto text-center d-flex align-items-end">
-                <div class="row d-flex justify-content-center">
-                    <div class="socials">
-                        @include('layouts.socialshare')
+    <header class="fixed-top">
+        <div class="container-md">
+            <div class="menu_head row flex-wrap">
+                <!-- Navigation -->
+                <div class="col-auto me-auto navbar align-items-end">
+                    <nav class="navbar-expand-lg">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Reyma</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link disabled" href="#">Contáctanos</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <!-- Social Share -->
+                <div class="col-auto text-center d-flex align-items-end">
+                    <div class="row d-flex justify-content-center">
+                        <div class="socials">
+                            @include('layouts.socialshare')
+                        </div>
                     </div>
                 </div>
             </div>

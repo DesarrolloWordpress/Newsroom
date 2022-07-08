@@ -1,17 +1,19 @@
 @section('footer')
-    <footer>
+    <footer style="background-color:#f4f4f4;">
         <div class="container-md p-0">
-            <div class="row justify-content-center">
-                <div class="col-md-4 col-xs-12 "><img src="{{ asset('images/home/reyma_logo.png') }}"
-                        style="max-width: 130px" />
+            <div class="row_f1 row justify-content-center py-5">
+                <div class="d-flex align-items-center col-md-4 col-xs-12"><img
+                        src="{{ asset('images/home/reyma_logo.png') }}" style="max-width: 130px" />
                 </div>
-                <div class="text-center col-md-4 col-xs-12">
-                    <h5>Siguenos en:</h5>
-                    @include('layouts.socialshare')
+                <div class="row_f2 d-flex justify-content-center align-items-center col-md-4 col-xs-12">
+                    <div class="text-center">
+                        <h5>Siguenos en:</h5>
+                        @include('layouts.socialshare')
+                    </div>
                 </div>
-                <div class="text-right col-md-4 col-xs-12">
+                <div class="row_f3 text-right col-md-4 col-xs-12">
                     <p class="text-end">Blvd. Hermanos Aldama No. 4321, <br> Ciudad Industrial. 37490 Léon, Gto.</p>
-                    <p class="text-end">
+                    <p class="text-end bold_txt_foo">
                         <a href="tel:4777889900"> Tel: 477 7889 900 </a>
                         <br>
                         <a href="https://reyma.com.mx/" target="_blank"> www.reyma.com.mx </a>
@@ -21,15 +23,14 @@
         </div>
         <div class="footer_copy row">
             <div class="col-md-12 col-xs-12 p-0">
-                <footer class="py-5"
-                    style="background-color:#052453; color:#FFF; font-size: 1em; opacity:0.6; width: inherit;">
-                    <div class="container text-center">
+                <div class="py-4" style="background-color:#052453; color:#FFF; font-size: 1em; width: inherit;">
+                    <div class="col-md-6 px-5 container text-center">
                         <p class="m-0">&copy; Copyright 2019 PLÁSTICOS ADHERIBLES DEL BAJÍO S.A. de C.V. Actuamos de
                             manera
                             responsable y con enfoque a la ética y los derechos humanos, basados en el código ETI.
                             Consulta nuestra POLÍTICA DE PRIVACIDAD.</p>
                     </div>
-                </footer>
+                </div>
             </div>
         </div>
     </footer>
