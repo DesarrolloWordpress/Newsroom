@@ -2,14 +2,14 @@
     <div class="container-md border border-dark py-5">
         <div class="">
             <div class="text-center">
-                <h2>SUSCRÍBETE A LOS CORREOS ELECTRÓNICOS DE REYMA</h2>
+                <h2>SUSCRÍBETE A NUESTRO MAILING</h2>
             </div>
-            <div class="text-center mt-3">
+            {{-- <div class="text-center mt-3">
                 <p>Reciba antes que nadie las noticias y temas relacionados con los productos de REYMA</p>
-            </div>
+            </div> --}}
         </div>
         <div class="">
-            <form class="frm_news row g-3 needs-validation justify-content-center mt-4" novalidate>
+            <form class="frm_news row g-3 needs-validation justify-content-center mt-2" novalidate>
                 <div class="col-md-4">
                     <input type="text" class="form-control" placeholder="Dirección de correo" id="validationCustom01"
                         required>
