@@ -114,3 +114,20 @@ footer {
     font-size: 18px;
     padding: 0.555rem 0.75rem;
 }
+/* informacion */
+.informacion_news span,
+.informacion_news a,
+.informacion_news h5 {
+    font-weight: 700;
+}
+.informacion_news a,
+.informacion_news h5 {
+    color: #052453;
+}
+.informacion_news a {
+    text-decoration: none;
+}
+.informacion_news h5,
+.informacion_news p {
+    margin-bottom: 33px;
+}
