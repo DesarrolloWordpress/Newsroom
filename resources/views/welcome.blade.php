@@ -21,14 +21,13 @@
                     }
                 }
             });
-
         })(jQuery);
     </script>
 @endsection
 @section('banner-fondo-inicio')
     <div
         style="background-image: URL('{{ asset('images/home/instalaciones_banderas.jpg') }}'); background-size: cover; background-repeat: no-repeat;">
-        <div class="banner_head_home w-100" style="background-color: #052453; opacity: 0.9;">
+        <div class="banner_head_home w-100">
             <div class="container-md" style="color: #FFF">
                 <h2 class="titulo_head_home text-center my-4">Newsroom</h2>
                 <div class="cont_img_b d-flex justify-content-center">
@@ -64,7 +63,7 @@
         <div>
             @include('mailing.formulario_suscripcion')
         </div>
-        <div>
+        <div class="my-5 py-5">
             @include('informacion')
         </div>
     </div>
