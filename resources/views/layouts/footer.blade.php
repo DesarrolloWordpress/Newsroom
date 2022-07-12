@@ -2,18 +2,20 @@
     <footer style="background-color:#f4f4f4;">
         <div class="container-md p-0">
             <div class="row_f1 row justify-content-center py-5">
-                <div class="d-flex align-items-center col-md-4 col-xs-12"><img
-                        src="{{ asset('images/home/reyma_logo.png') }}" style="max-width: 130px" />
+                <div
+                    class="d-flex align-items-center justify-content-xl-start justify-content-center col-xl-4 col-sm-12 mt-xl-0 mt-md-4">
+                    <img src="{{ asset('images/home/reyma_logo.png') }}" style="max-width: 130px" />
                 </div>
-                <div class="row_f2 d-flex justify-content-center align-items-center col-md-4 col-xs-12">
+                <div class="row_f2 d-flex justify-content-center align-items-center col-xl-4 col-sm-12 mt-xl-0 mt-md-4">
                     <div class="text-center">
                         <h5>Siguenos en:</h5>
                         @include('layouts.socialshare')
                     </div>
                 </div>
-                <div class="row_f3 text-right col-md-4 col-xs-12">
-                    <p class="text-end">Blvd. Hermanos Aldama No. 4321, <br> Ciudad Industrial. 37490 Léon, Gto.</p>
-                    <p class="text-end bold_txt_foo">
+                <div class="row_f3 text-right col-xl-4 col-sm-12 mt-xl-0 mt-md-4">
+                    <p class="text-xl-end text-center">Blvd. Hermanos Aldama No. 4321, <br> Ciudad Industrial. 37490 Léon,
+                        Gto.</p>
+                    <p class="text-xl-end text-center bold_txt_foo">
                         <a href="tel:4777889900"> Tel: 477 7889 900 </a>
                         <br>
                         <a href="https://reyma.com.mx/" target="_blank"> www.reyma.com.mx </a>

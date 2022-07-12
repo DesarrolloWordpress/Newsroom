@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="{{ asset('css/dibujables.css') }}" rel="stylesheet">
     <!-- font awesome -->
     <link type="text/css" rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         header,
         header .list_ico_share_f a,
@@ -84,10 +87,11 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="#">Inicio <span
+                                            class="sr-only">{{-- (current) --}}</span></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Reyma</a>
+                                    <a class="nav-link" href="https://reyma.com.mx/" target="_blank">Reyma</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link disabled" href="#">Contáctanos</a>
