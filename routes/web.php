@@ -14,8 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $posts = Post::all();
+ /*Route::get('/', function () {
+   // $posts = Post::all();
 
-    return view('welcome', compact('posts'));
-});
+    return view('welcome');
+});*/
+
+/* post */
+
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/home/{id}', 'HomeController@show');
+
+Route::resource('posts', 'PostsController');
