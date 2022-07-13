@@ -6,6 +6,12 @@ Colores
 #539bfd - botones
 */
 @font-face {
+    font-family: "Helvetica Neue";
+    src: url("../fonts/HelveticaNeue.ttc"); /*for IE */
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
     font-family: "social-icons";
     src: url("../fonts/social-icons.eot");
     src: url("../fonts/social-icons.eot") format("embedded-opentype"),
@@ -34,6 +40,7 @@ Colores
 }
 body {
     font-size: 18px;
+    font-family: "Helvetica Neue", sans-serif;
 }
 /* fuentes */
 .txt_font {
@@ -69,6 +76,35 @@ footer {
     text-decoration: none;
 }
 /* socialshare */
+.fa,
+.fas,
+.fa-solid,
+.far,
+.fa-regular,
+.fal,
+.fa-light,
+.fat,
+.fa-thin,
+.fad,
+.fa-duotone,
+.fab,
+.fa-brands {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: var(--fa-display, inline-block);
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-rendering: auto;
+}
+.fab,
+.fa-brands {
+    font-family: "Font Awesome 6 Brands";
+    font-weight: 400;
+}
+.fa-youtube::before {
+    content: "\f167";
+}
 .socialM > li {
     border: none;
     padding: 0.5rem 0.5rem;
@@ -117,7 +153,8 @@ footer {
 /* informacion */
 .informacion_news span,
 .informacion_news a,
-.informacion_news h5 {
+.informacion_news h5,
+.txt_bold {
     font-weight: 700;
 }
 .informacion_news a,
@@ -130,4 +167,34 @@ footer {
 .informacion_news h5,
 .informacion_news p {
     margin-bottom: 33px;
+}
+/* pagination */
+.post_pagination {
+    margin-top: 5.7rem;
+}
+.post_pagination .pagination {
+    justify-content: center;
+}
+.post_pagination .page-item.active .page-link {
+    background-color: #539bfd;
+    border-color: #539bfd;
+}
+.post_pagination .page-link {
+    color: #000;
+    font-weight: bold;
+    border: none;
+}
+.post_pagination .page-item:first-of-type span,
+.post_pagination .page-item:last-of-type a {
+    font-weight: 900;
+    color: #539bfd;
+}
+@media only screen and (max-width: 1199px) {
+    .row_f3 p:first-of-type::before {
+        right: inherit;
+        left: calc(50% - calc(30% / 2));
+    }
+    .informacion_news > div > div {
+        text-align: center;
+    }
 }
