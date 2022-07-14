@@ -9,6 +9,7 @@
     <script>
         (function($) {
             $(document).ready(function() {
+                headersolid();
                 window.onscroll = function() {
                     headersolid()
                 };
@@ -38,8 +39,7 @@
                 </div>
                 <div class="row justify-content-center my-3 pt-5">
                     <h5 class="text-center mb-4" style="font-size: 2.3rem;font-weight: 700;">Bienvenido</h5>
-                    <p class="txt_font text-center col-md-6">Recibe antes que nadie las noticias relaciondas con
-                        los
+                    <p class="txt_font text-center col-md-6">Recibe antes que nadie las noticias relaciondas con los
                         produtos <span class="txt_bold">REYMA</span>.</p>
                 </div>
                 <div class="input-group rounded pt-5 justify-content-center buscador_newsroom">

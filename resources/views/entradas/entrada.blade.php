@@ -16,11 +16,13 @@
             </div>
             <hr style="max-width: 50px;height: 2px;">
             <div class="">
-                <div class="post_title">
-                    <h3 style="font-weight: 600;">
-                        {{ $post['title'] }}
-                    </h3>
-                </div>
+                <a href="/home/{{ $post['id'] }}">
+                    <div class="post_title">
+                        <h3 style="font-weight: 600;">
+                            {{ $post['title'] }}
+                        </h3>
+                    </div>
+                </a>
                 <div class="post_content_ext">
                     <p>
                         {!! substr($post['content'], 0, 100) !!}

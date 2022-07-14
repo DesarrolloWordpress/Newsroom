@@ -7,7 +7,7 @@ use App\Post;
 
 class HomeController extends Controller
 {
-    
+
     /**
      * Create a new controller instance.
      *
@@ -39,6 +39,6 @@ class HomeController extends Controller
         //Find the post with the id = $id
         $post = Post::find($id);
 
-        return view('/show', ['post' => $post]);
+        return view('/entradas/show', ['post' => $post]);
     }
 }
