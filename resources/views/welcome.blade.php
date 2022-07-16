@@ -2,6 +2,19 @@
 @section('styles')
     <link href="css/home.css" rel="stylesheet">
     <style>
+        header .list_ico_share_f a {
+            color: #FFF;
+        }
+
+        .menu_head .nav-item a {
+            color: #fff;
+            padding: 0.35rem 0.9rem !important;
+        }
+
+        .menu_head .nav-item.active {
+            font-weight: 700;
+            background-color: #539bfd;
+        }
     </style>
 @endsection
 @section('scripts')
@@ -35,7 +48,7 @@
                         <img src="{{ asset('images/home/reyma_logo.png') }}" style="max-width: 230px" />
                     </div>
                     <div class="mx-4" style="border-left:1px solid #FFF;"></div>
-                    <h2 class="col-auto text-left titulo_head_home my-4">Newsroom</h2>
+                    <h2 class="col-auto text-left titulo_head_home my-4"> Newsroom </h2>
                 </div>
                 <div class="row justify-content-center my-3 pt-5">
                     <h5 class="text-center mb-4" style="font-size: 2.3rem;font-weight: 700;">Bienvenido</h5>

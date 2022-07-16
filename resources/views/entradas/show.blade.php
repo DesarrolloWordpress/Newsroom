@@ -1,4 +1,24 @@
-{{-- @extends('layouts.app') --}}
+@extends('layouts.main_post')
+@section('styles')
+    <link href="css/home.css" rel="stylesheet">
+    <style>
+        header .list_ico_share_f a {
+            color: #052453;
+        }
+
+        .menu_head .nav-item a {
+            color: #052453;
+            padding: 0.35rem 0.9rem !important;
+        }
+
+        header {
+            background-color: #FFF;
+            position: sticky !important;
+        }
+
+        olcome
+    </style>
+@endsection
 
 @section('content')
     <!-- Page Header -->
@@ -21,7 +41,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
-                <p>{!! $post['content'] !!}</p>
+                <p style="height: 100vh;">{!! $post['content'] !!}</p>
             </div>
         </div>
     </div>

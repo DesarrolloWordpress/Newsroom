@@ -24,10 +24,6 @@
             transition: all 0.3s ease;
         }
 
-        header .list_ico_share_f a {
-            color: #FFF;
-        }
-
         .menu_head {
             border-color: #8793ad !important;
             border-bottom: solid 2px;
@@ -35,18 +31,8 @@
             padding: 5px 0;
         }
 
-        .menu_head .nav-item.active {
-            font-weight: 700;
-            background-color: #539bfd;
-        }
-
         .menu_head .nav-item {
             margin-right: .9rem;
-        }
-
-        .menu_head .nav-item a {
-            color: #fff;
-            padding: 0.35rem 0.9rem !important;
         }
 
         /* onScroll */
@@ -87,7 +73,7 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="#">Inicio <span
+                                    <a class="nav-link" href="#"> Inicio <span
                                             class="sr-only">{{-- (current) --}}</span></a>
                                 </li>
                                 <li class="nav-item">
