@@ -15,8 +15,6 @@
             background-color: #FFF;
             position: sticky !important;
         }
-
-        olcome
     </style>
 @endsection
 
