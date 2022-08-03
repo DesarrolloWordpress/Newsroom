@@ -1,5 +1,5 @@
 <div class="emailing">
-    <div class="container-md border border-dark py-5">
+    <div class="container-md py-5">
         <div class="">
             <div class="text-center">
                 <h2>SUSCRÍBETE A NUESTRO MAILING</h2>

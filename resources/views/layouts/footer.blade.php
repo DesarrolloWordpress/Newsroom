@@ -4,7 +4,7 @@
             <div class="row_f1 row justify-content-center py-5">
                 <div
                     class="d-flex align-items-center justify-content-xl-start justify-content-center col-xl-4 col-sm-12 mt-xl-0 mt-md-4">
-                    <img src="{{ asset('images/home/reyma_logo.png') }}" style="max-width: 130px" />
+                    <img src="{{ asset('images/home/reyma_logo.png') }}" style="max-width: 160px" />
                 </div>
                 <div class="row_f2 d-flex justify-content-center align-items-center col-xl-4 col-sm-12 mt-xl-0 mt-md-4">
                     <div class="text-center">
