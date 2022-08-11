@@ -18,5 +18,18 @@ Route::get('/', function () {
 });
 
 /**
- * CRUD RUTAS DE USUARIOS
+ * AUTH CRUD
  */
+Route::match(['get', 'post'], '/login', function () {
+    return view('auth.login');
+});
+
+
+/**
+ * POST CRUD
+ */
+
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/home/{id}', 'HomeController@show');
+
+Route::resource('posts', 'PostsController');
