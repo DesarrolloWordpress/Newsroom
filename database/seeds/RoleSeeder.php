@@ -33,5 +33,10 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'admin.posts.create']);
         Permission::create(['name' => 'admin.posts.edit']);
         Permission::create(['name' => 'admin.posts.destroy']);
+
+        Permission::create(['name' => 'cliente.post.descargar.si']);
+        Permission::create(['name' => 'cliente.post.descargar.no']);
+
+        Permission::create(['name' => 'cliente.posts.index']);
     }
 }
