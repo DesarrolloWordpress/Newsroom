@@ -1,82 +1,100 @@
-@extends('layouts.main_home')
-@section('styles')
-    <link href="css/home.css" rel="stylesheet">
-    <style>
-        header .list_ico_share_f a {
-            color: #FFF;
-        }
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        .menu_head .nav-item a {
-            color: #fff;
-            padding: 0.35rem 0.9rem !important;
-        }
+        <title>Laravel</title>
 
-        .menu_head .nav-item.active {
-            font-weight: 700;
-            background-color: #539bfd;
-        }
-    </style>
-@endsection
-@section('scripts')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script>
-        (function($) {
-            $(document).ready(function() {
-                headersolid();
-                window.onscroll = function() {
-                    headersolid()
-                };
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
 
-                function headersolid() {
-                    if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-                        $('header').addClass("active");
-                    } else {
-                        $('header').removeClass("active");
-                    }
-                }
-            });
-        })(jQuery);
-    </script>
-@endsection
-@section('banner-fondo-inicio')
-    <div class="px-3"
-        style="background-image: URL('{{ asset('images/home/instalaciones_banderas.jpg') }}'); background-size: cover; background-repeat: no-repeat;">
-        <div class="banner_head_home w-100">
-            <div class="container-md" style="color: #FFF">
-                <div class="col-auto d-flex justify-content-center">
-                    <div class="col-auto cont_img_b d-flex justify-content-end">
-                        <img src="{{ asset('images/home/reyma_logo.png') }}" style="max-width: 230px" />
-                    </div>
-                    <div class="mx-4" style="border-left:1px solid #FFF;"></div>
-                    <h2 class="col-auto text-left titulo_head_home my-4"> Newsroom </h2>
+        <!-- Styles -->
+        <style>
+            html, body {
+                background-color: #fff;
+                color: #636b6f;
+                font-family: 'Nunito', sans-serif;
+                font-weight: 200;
+                height: 100vh;
+                margin: 0;
+            }
+
+            .full-height {
+                height: 100vh;
+            }
+
+            .flex-center {
+                align-items: center;
+                display: flex;
+                justify-content: center;
+            }
+
+            .position-ref {
+                position: relative;
+            }
+
+            .top-right {
+                position: absolute;
+                right: 10px;
+                top: 18px;
+            }
+
+            .content {
+                text-align: center;
+            }
+
+            .title {
+                font-size: 84px;
+            }
+
+            .links > a {
+                color: #636b6f;
+                padding: 0 25px;
+                font-size: 13px;
+                font-weight: 600;
+                letter-spacing: .1rem;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+
+            .m-b-md {
+                margin-bottom: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="flex-center position-ref full-height">
+            @if (Route::has('login'))
+                <div class="top-right links">
+                    @auth
+                        <a href="{{ url('/home') }}">Home</a>
+                    @else
+                        <a href="{{ route('login') }}">Login</a>
+
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}">Register</a>
+                        @endif
+                    @endauth
                 </div>
-                <div class="row justify-content-center my-3 pt-5">
-                    <h5 class="text-center mb-4" style="font-size: 2.3rem;font-weight: 700;">Bienvenido</h5>
-                    <p class="txt_font text-center col-md-6">Recibe antes que nadie las noticias relaciondas con los
-                        produtos <span class="txt_bold">REYMA</span>.</p>
+            @endif
+
+            <div class="content">
+                <div class="title m-b-md">
+                    Laravel
                 </div>
-                <div class="input-group rounded pt-5 justify-content-center buscador_newsroom">
-                    <input type="search" class="form-control rounded bg-transparent" placeholder="Buscar"
-                        aria-label="Search" aria-describedby="search-addon" style="max-width: 320px" />
-                    <span class="input-group-text" id="search-addon">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </span>
+
+                <div class="links">
+                    <a href="https://laravel.com/docs">Docs</a>
+                    <a href="https://laracasts.com">Laracasts</a>
+                    <a href="https://laravel-news.com">News</a>
+                    <a href="https://blog.laravel.com">Blog</a>
+                    <a href="https://nova.laravel.com">Nova</a>
+                    <a href="https://forge.laravel.com">Forge</a>
+                    <a href="https://vapor.laravel.com">Vapor</a>
+                    <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
             </div>
         </div>
-    </div>
-@endsection
-@section('content')
-    <div class="container-md">
-        <div class="row my-5 pb-5">
-            @include('entradas.entrada')
-        </div>
-        <div>
-            @include('mailing.formulario_suscripcion')
-        </div>
-        <div class="my-5 py-5">
-            @include('informacion')
-        </div>
-
-    </div>
-@endsection
+    </body>
+</html>

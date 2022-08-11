@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\UserCotroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,5 @@ Route::get('/', function () {
 /**
  * CRUD RUTAS DE USUARIOS
  */
+
+Route::resource('users', UserCotroller::class)->name('admin.users');
