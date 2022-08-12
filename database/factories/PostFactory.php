@@ -4,11 +4,12 @@
 
 use App\Category;
 use App\Model;
+use App\Post;
 use App\User;
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
 
-$factory->define(Model::class, function (Faker $faker) {
+$factory->define(Post::class, function (Faker $faker) {
     $name = $this->faker->unique()->sentence();
     return [
         'name' => $name,
@@ -17,6 +18,6 @@ $factory->define(Model::class, function (Faker $faker) {
         'body' => $this->faker->text(250),
         'status' => $this->faker->randomElement([1, 2]),
         'category_id' => Category::all()->random()->id,
-        'user_id' => User::all()->random()->idate
+        'user_id' => User::all()->random()->id
     ];
 });

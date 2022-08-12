@@ -3,6 +3,7 @@
 use App\Category;
 use App\Tag;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Storage;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,6 +15,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UserSeeder::class);
+
+        Storage::makeDirectory('posts');
 
         //$this->call(RoleSeeder::class);
 
