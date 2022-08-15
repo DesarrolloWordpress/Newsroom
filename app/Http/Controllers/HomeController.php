@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $posts = Post::where('published', 1)->orderBy('id', 'desc')->paginate(9);
+        $posts = Post::where('status', 1)->orderBy('id', 'desc')->paginate(9);
 
         return view('welcome', ['posts' => $posts]);
         //return view('welcome');
@@ -38,7 +38,7 @@ class HomeController extends Controller
     {
         //Find the post with the id = $id
         $post = Post::find($id);
-        $posts = Post::where('published', 1)->orderBy('id', 'desc')->paginate(3);
+        $posts = Post::where('status', 1)->orderBy('id', 'desc')->paginate(3);
 
         return view('/entradas/show', compact('post', 'posts'));
     }
