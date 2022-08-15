@@ -9,7 +9,7 @@ class Tag extends Model
     /**
      * Relaión muchos a muchos
      */
-    public function tags()
+    public function posts()
     {
         return $this->belongsToMany(Post::class);
     }
