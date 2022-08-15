@@ -1,0 +1,214 @@
+/*
+Colores
+#052453 - Azul fondos
+#8793ad - dibujables
+#f4f4f4 - fondos
+#539bfd - botones
+*/
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("../fonts/HelveticaNeue.ttc"); /*for IE */
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "social-icons";
+    src: url("../fonts/social-icons.eot");
+    src: url("../fonts/social-icons.eot") format("embedded-opentype"),
+        url("../fonts/social-icons.woff") format("woff"),
+        url("../fonts/social-icons.ttf") format("truetype"),
+        url("../fonts/social-icons.svg") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+.social-icons {
+    font-family: "social-icons";
+    font-style: normal;
+    font-weight: normal;
+    speak: never;
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: 0.2em;
+    text-align: center;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1em;
+    margin-left: 0.2em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+body {
+    font-size: 18px;
+    font-family: "Helvetica Neue", sans-serif;
+}
+/* fuentes */
+.txt_font {
+    font-size: 18px;
+}
+/* footer */
+footer {
+    border-top: solid 5px #539bfd;
+    color: #052453;
+}
+.row_f2 .list_ico_share_f a {
+    color: #052453;
+}
+.row_f2 .socialM > li {
+    font-size: 1.3em;
+}
+.row_f3 p:first-of-type {
+    position: relative;
+    padding-bottom: 0.8rem;
+}
+.row_f3 p:first-of-type::before {
+    content: "";
+    position: absolute;
+    width: 30%;
+    height: 2px;
+    background-color: #8793ad;
+    bottom: calc(-0.1rem - 2px);
+    right: 0;
+}
+.bold_txt_foo a {
+    font-weight: 800;
+    color: #052453;
+    text-decoration: none;
+}
+/* socialshare */
+.fa,
+.fas,
+.fa-solid,
+.far,
+.fa-regular,
+.fal,
+.fa-light,
+.fat,
+.fa-thin,
+.fad,
+.fa-duotone,
+.fab,
+.fa-brands {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: var(--fa-display, inline-block);
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-rendering: auto;
+}
+.fab,
+.fa-brands {
+    font-family: "Font Awesome 6 Brands";
+    font-weight: 400;
+}
+.fa-youtube::before {
+    content: "\f167";
+}
+.socialM > li {
+    border: none;
+    padding: 0.5rem 0.5rem;
+    font-size: 1em;
+}
+/* Buscar */
+.buscador_newsroom input {
+    border: none;
+    border-bottom: solid 2px #8793ad;
+    border-radius: 0px !important;
+    color: #fff !important;
+}
+.buscador_newsroom input::placeholder {
+    color: #fff;
+    font-size: 18px;
+}
+.buscador_newsroom #search-addon {
+    background: #fff0;
+    border-width: 0 0 2px 0;
+    border-bottom: solid 2px #8793ad;
+    border-radius: 0px !important;
+}
+.buscador_newsroom #search-addon i::before {
+    color: #fff;
+}
+/* mailing */
+.btn_mailing_news {
+    background-color: #539bfd;
+    border-radius: 0;
+    color: #fff;
+    font-weight: 700;
+    padding: 0.7rem 3.9rem;
+    font-size: 18px;
+}
+.emailing h2 {
+    color: #052453;
+    font-weight: 700;
+    font-size: 1.77rem;
+}
+.frm_news input {
+    border-color: #000;
+    border-radius: 0;
+    font-size: 18px;
+    padding: 0.555rem 0.75rem;
+}
+/* informacion */
+.informacion_news span,
+.informacion_news a,
+.informacion_news h5,
+.txt_bold {
+    font-weight: 700;
+}
+.informacion_news a,
+.informacion_news h5 {
+    color: #052453;
+}
+.informacion_news a {
+    text-decoration: none;
+}
+.informacion_news h5,
+.informacion_news p {
+    margin-bottom: 33px;
+}
+/* pagination */
+.post_pagination {
+    margin-top: 5.7rem;
+}
+.post_pagination .pagination {
+    justify-content: center;
+}
+.post_pagination .page-item.active .page-link {
+    background-color: #539bfd;
+    border-color: #539bfd;
+}
+.post_pagination .page-link {
+    color: #000;
+    font-weight: bold;
+    border: none;
+}
+.post_pagination .page-item:first-of-type span,
+.post_pagination .page-item:last-of-type a {
+    font-weight: 900;
+    color: #539bfd;
+}
+.emailing {
+    position: relative;
+}
+.emailing::before {
+    content: "";
+    background-image: URL("http://newsroom.test/images/BANNER MAILING.jpg");
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    margin: 0 calc(50% - 50vw);
+    background-position: 50% 39%;
+    background-repeat: no-repeat;
+}
+@media only screen and (max-width: 1199px) {
+    .row_f3 p:first-of-type::before {
+        right: inherit;
+        left: calc(50% - calc(30% / 2));
+    }
+    .informacion_news > div > div {
+        text-align: center;
+    }
+}
