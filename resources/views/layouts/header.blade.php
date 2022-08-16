@@ -4,32 +4,30 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- bootstrap -->
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <!-- Styles -->
-    {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
     {{-- <link rel="stylesheet" href="{{ mix('css/app.css', 'app') }}"> --}}
-    <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/dibujables.css') }}" rel="stylesheet">
-    <!-- font awesome -->
+    <!-- Font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        header,
-        header .list_ico_share_f a,
-        .menu_head .nav-item a,
-        .menu_head {
-            -webkit-transition: all 0.3s ease;
-            -o-transition: all 0.3s ease;
-            transition: all 0.3s ease;
+        header>nav,
+        header.active>nav,
+        .menu_head .space-x-4> :not([hidden])~ :not([hidden]),
+        .active .menu_head .space-x-4> :not([hidden])~ :not([hidden]) {
+            -webkit-transition: all 0.5s ease-in-out;
+            -o-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out;
         }
 
         .menu_head {
-            border-color: #8793ad !important;
-            border-bottom: solid 2px;
-            min-height: 73px;
+            min-height: 50px;
             padding: 5px 0;
         }
 
@@ -38,18 +36,24 @@
         }
 
         /* onScroll */
-        header.active {
-            background-color: #FFF;
+
+        header.active>nav {
             border-color: #8793ad !important;
+            background-color: #FFF;
             border-bottom: solid 2px;
         }
+
 
         header.active .list_ico_share_f a {
             color: #052453;
         }
 
-        .active .menu_head .nav-item:not(.menu_head .nav-item.active) a {
+        .active .menu_head .space-x-4> :not([hidden])~ :not([hidden]) {
             color: #052453;
+        }
+
+        .bg-azul3 {
+            background-color: #052453;
         }
 
         .active .menu_head {
