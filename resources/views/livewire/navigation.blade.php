@@ -4,7 +4,7 @@
             <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 <!-- Mobile menu button-->
                 <button x-on:click="open = true" type="button"
-                    class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                    class="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                     aria-controls="mobile-menu" aria-expanded="false">
                     <span class="sr-only">Open main menu</span>
                     <!--
@@ -92,8 +92,9 @@
                             <!-- Active: "bg-gray-100", Not Active: "" -->
                             <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
                                 id="user-menu-item-0">Tu perfil</a>
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
-                                id="user-menu-item-2">Cerrar sesión</a>
+                            <a href="{{ route('logout') }}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem"
+                                tabindex="-1" id="user-menu-item-2">Cerrar sesión</a>
+                            <pre> {{ Auth::user()->name }}</pre>
                         </div>
                     </div>
                 </div>
@@ -106,14 +107,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="menu_head">
+                {{-- <div class="menu_head">
                     <div class="px-2 pt-2 pb-3 space-y-1">
                         <a href="#" class="block px-4 py-2 text-sm text-white" role="menuitem" tabindex="-1"
                             id="user-menu-item-2">Login</a>
                         <a href="#" class="block px-4 py-2 text-sm text-white" role="menuitem" tabindex="-1"
                             id="user-menu-item-2">Register</a>
                     </div>
-                </div>
+                </div> --}}
             @endauth
         </div>
     </div>
@@ -124,12 +125,25 @@
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
             <a href="#" class="active text-white block px-3 py-2 rounded-md text-base font-semibold"
                 aria-current="page">Inicio</a>
-
             <a href="#"
                 class="text-gray-300 hover:bg-azul3 hover:text-white block px-3 py-2 rounded-md text-base font-semibold">Reyma</a>
-
             <a href="#"
                 class="text-gray-300 hover:bg-azul3 hover:text-white block px-3 py-2 rounded-md text-base font-semibold">Contáctanos</a>
         </div>
     </div>
 </nav>
+
+{{-- .
+
+1.- Jonás Soto
+2.- Zucco
+
+
+1.- Omar Villagómez.
+2.- Emmanuel M.
+3.- Guillermo .
+4.- Daniel B.
+
+.
+
+Responsable: Daniel Bueno Esparza --}}

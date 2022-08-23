@@ -36,13 +36,11 @@
         }
 
         /* onScroll */
-
         header.active>nav {
             border-color: #8793ad !important;
             background-color: #FFF;
             border-bottom: solid 2px;
         }
-
 
         header.active .list_ico_share_f a {
             color: #052453;
@@ -61,7 +59,6 @@
         }
 
         /* end onScroll */
-
         .banner_head_home {
             padding-top: 73px;
         }
@@ -70,37 +67,6 @@
 </head>
 
 <body>
-    <header class="fixed-top">
-        @livewire('navigation');
-        {{-- <div class="container-md">
-            <div class="menu_head row flex-wrap">
-                <!-- Navigation -->
-                <div class="col-auto me-auto navbar align-items-end">
-                    <nav class="navbar-expand-lg">
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav">
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="#"> Inicio <span
-                                            class="sr-only">(current)</span></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="https://reyma.com.mx/" target="_blank">Reyma</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link disabled" href="#">Contáctanos</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-                <!-- Social Share -->
-                <div class="col-auto text-center d-flex align-items-end">
-                    <div class="row d-flex justify-content-center">
-                        <div class="socials">
-                            @include('layouts.socialshare')
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
+    <header class="fixed top-0 left-0 right-0 z-[7]">
+        @livewire('navigation')
     </header>

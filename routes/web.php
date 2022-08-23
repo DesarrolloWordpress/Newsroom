@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,10 +21,26 @@ Route::get('/', function () {
 /**
  * AUTH CRUD
  */
-Route::match(['get', 'post'], '/login', function () {
+/*Route::get('/login', function () {
     return view('auth.login');
 });
+Route::post('/login', function () {
+    $credentials = request()->only('email', 'password');
 
+    if (Auth::attempt($credentials)) {
+        request()->session()->regenerate();
+
+        return redirect('home');
+    }
+
+    return redirect('login');
+});*/
+
+/**
+ * USER
+ */
+Auth::routes();
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('logout');
 
 /**
  * POST CRUD
@@ -32,4 +49,7 @@ Route::match(['get', 'post'], '/login', function () {
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home/{id}', 'HomeController@show');
 
-Route::resource('posts', 'PostsController');
+/* Route::resource('posts', 'PostsController'); */
+
+
+/*Route::get('/home', 'HomeController@index')->name('home');*/

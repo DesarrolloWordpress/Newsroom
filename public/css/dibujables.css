@@ -67,7 +67,7 @@ footer {
     width: 30%;
     height: 2px;
     background-color: #8793ad;
-    bottom: calc(-0.1rem - 2px);
+    bottom: calc(0.5rem - 3px);
     right: 0;
 }
 .bold_txt_foo a {
@@ -195,7 +195,7 @@ footer {
 .emailing::before {
     content: "";
     background-image: URL("http://newsroom.test/images/BANNER MAILING.jpg");
-    width: 100vw;
+    width: calc(100vw - 9px);
     height: 100%;
     position: absolute;
     z-index: -1;

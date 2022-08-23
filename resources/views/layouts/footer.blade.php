@@ -23,8 +23,8 @@
                 </div>
             </div>
         </div>
-        <div class="footer_copy row">
-            <div class="col-md-12 col-xs-12 p-0">
+        <div class="footer_copy">
+            <div class="col-md-12 col-xs-12">
                 <div class="py-4" style="background-color:#052453; color:#FFF; font-size: 1em; width: inherit;">
                     <div class="col-md-6 px-5 container text-center">
                         <p class="m-0">&copy; Copyright 2019 PLÁSTICOS ADHERIBLES DEL BAJÍO S.A. de C.V. Actuamos de
