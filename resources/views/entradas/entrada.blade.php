@@ -7,7 +7,13 @@
         <div class="">
             <div class="row mt-3">
                 <div class="post_category col-md-6">
-                    <label class="" for="" style="font-weight: 600;font-size: 16px;">Specialist</label>
+                    {{-- @foreach ($post->category as $category) --}}
+                    <label class="" for=""
+                        style="font-weight: 600;font-size: 16px;">{{ $post->category->name }}
+                    </label>
+                    <label class="" for="" style="font-weight: 600;font-size: 16px;">{{ $post }}
+                    </label>
+                    {{-- @endforeach --}}
                 </div>
                 <div class="post_date col-md-6">
                     <label class="w-100 m-0" style="text-align: right;font-size: 16px;" for="">Jun 01
