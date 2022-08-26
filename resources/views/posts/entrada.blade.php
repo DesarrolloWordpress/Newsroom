@@ -1,18 +1,21 @@
 @foreach ($posts as $post)
-    <div class="col-xl-4 col-md-6">
-        <div class="">
-            {{-- <img class="img-fluid" src="http://placeimg.com/450/270" alt="img_pruebas"> --}}
-            <img class="img-thumbnail mt-5" width="100%" src="{{ asset($post['image_url']) }}" alt="post_image">
+    <div class="col-xl-4 col-md-6 my-[2em]">
+        <div class="max-h-[270px] h-full">
+            <img class="img-thumbnail object-cover mt-5 h-full w-full" src="{{ Storage::url($post->image->url) }}"
+                alt="post_image">
         </div>
         <div class="">
             <div class="row mt-3">
                 <div class="post_category col-md-6">
                     {{-- @foreach ($post->category as $category) --}}
-                    <label class="" for=""
+                    <label class="text--[{{ $post->category->color }}]" for=""
                         style="font-weight: 600;font-size: 16px;">{{ $post->category->name }}
                     </label>
-                    <label class="" for="" style="font-weight: 600;font-size: 16px;">{{ $post }}
-                    </label>
+                    @foreach ($post->tags as $tag)
+                        {{-- <label class="" for=""
+                            style="font-weight: 600;font-size: 16px;">{{ $tag->name }}
+                        </label> --}}
+                    @endforeach
                     {{-- @endforeach --}}
                 </div>
                 <div class="post_date col-md-6">
@@ -22,10 +25,10 @@
             </div>
             <hr style="max-width: 50px;height: 2px;">
             <div class="">
-                <a href="/home/{{ $post['id'] }}">
+                <a href="{{ route('post.show', $post) }}">
                     <div class="post_title">
                         <h3 style="font-weight: 600;">
-                            {{ $post['title'] }}
+                            {{ $post['name'] }}
                         </h3>
                     </div>
                 </a>

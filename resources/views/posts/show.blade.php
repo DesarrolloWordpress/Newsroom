@@ -95,7 +95,7 @@
         </div>
 
         <div class="row pb-5">
-            @include('entradas.entrada')
+            @include('posts.entradaRelacionada')
         </div>
     </div>
 @endsection

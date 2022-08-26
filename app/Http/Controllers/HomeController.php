@@ -28,16 +28,4 @@ class HomeController extends Controller
 
         return view('welcome', compact('posts'));
     }
-
-    /**
-     * Show the post identified by the $id
-     */
-    public function show($id)
-    {
-        //Find the post with the id = $id
-        $post = Post::find($id);
-        $posts = Post::where('status', 2)->orderBy('id', 'desc')->paginate(3);
-
-        return view('/entradas/show', compact('post', 'posts'));
-    }
 }

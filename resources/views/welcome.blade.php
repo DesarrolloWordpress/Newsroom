@@ -69,7 +69,7 @@
 @section('content')
     <div class="container-md">
         <div class="row my-5 pb-5">
-            @include('entradas.entrada')
+            @include('posts.entrada')
         </div>
         <div>
             @include('mailing.formulario_suscripcion')

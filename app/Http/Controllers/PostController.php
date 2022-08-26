@@ -6,9 +6,9 @@ use App\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 
-class PostsController extends Controller
+class PostController extends Controller
 {
-    
+
     /**
      * Create a new controller instance.
      *
@@ -16,7 +16,7 @@ class PostsController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     /**
@@ -27,13 +27,13 @@ class PostsController extends Controller
     public function index()
     {
 
-        if(!\Auth::user()->hasRole('admin') && !\Auth::user()->hasRole('manager') && !\Auth::user()->hasRole('content-editor') ){
+        /*if (!\Auth::user()->hasRole('admin') && !\Auth::user()->hasRole('manager') && !\Auth::user()->hasRole('content-editor')) {
             $posts = Post::where('userId', \Auth::user()->id)->orderBy('id', 'desc')
-            ->get();
-        }else{
+                ->get();
+        } else {
             $posts = Post::orderBy('id', 'desc')->get();
-        }
-
+        }*/
+        $posts = Post::where('status', 2)->get();
 
         return view('admin.posts.index', ['posts' => $posts]);
     }
@@ -95,16 +95,27 @@ class PostsController extends Controller
 
         return redirect('/posts')->with('success', 'Post Created Successfully!');
     }
+    /**
+     * Show the post identified by the $id
+     */
+    public function sshow(Post $post)
+    {
+        //Find the post with the id = $id
+        return $post;
+        /* $post = Post::find($id);
+        $posts = Post::where('status', 2)->orderBy('id', 'desc')->paginate(3);
 
+        return view('/entradas/show', compact('post', 'posts'));*/
+    }
     /**
      * Display the specified resource.
      *
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request, Post $post)
+    public function show(Post $post)
     {
-        if (\Request::ajax()){
+        if (\Request::ajax()) {
 
             $post = Post::find($request['task']['id']);
             $post->published = $request['task']['checked'];
@@ -113,7 +124,14 @@ class PostsController extends Controller
             return $request;
         }
 
-        return view('admin.posts.show', ['post'=>$post]);
+        $relacionados = Post::where('category_id', $post->category_id)
+            ->where('status', 2)
+            ->where('id', '!=', $post->id)
+            ->latest('id')
+            ->take(3)
+            ->get();
+
+        return view('posts.show', compact('post', 'relacionados'));
     }
 
     /**
@@ -193,15 +211,15 @@ class PostsController extends Controller
      */
     public function destroy(Post $post, Request $request)
     {
-        
+
         //find the post
         $post = Post::find($request->post_id);
-        
+
         $this->authorize('delete', $post);
 
-        $oldImage = public_path() . '/storage/images/posts_images/'. $post->image_url;
+        $oldImage = public_path() . '/storage/images/posts_images/' . $post->image_url;
 
-        if(file_exists($oldImage)){
+        if (file_exists($oldImage)) {
             //delete the image
             unlink($oldImage);
         }

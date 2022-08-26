@@ -40,16 +40,15 @@ Route::post('/login', function () {
  * USER
  */
 Auth::routes();
-Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('logout');
+Route::post('logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('logout');
+
+Route::get('/', 'HomeController@index')->name('home');
 
 /**
  * POST CRUD
  */
-
-Route::get('/', 'HomeController@index')->name('home');
-Route::get('/home/{id}', 'HomeController@show');
+Route::get('/post/{post}', 'PostController@show')->name('post.show');
 
 /* Route::resource('posts', 'PostsController'); */
-
 
 /*Route::get('/home', 'HomeController@index')->name('home');*/
