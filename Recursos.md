@@ -1,9 +1,10 @@
-| recurso     | url                                              |
-| :---------- | :----------------------------------------------- |
-| Tailwindcss | https://tailwindcss.com/docs/                    |
-| Tailwindui  | https://tailwindui.com/documentation/            |
-| Livewire    | https://laravel-livewire.com/                    |
-| Alphine     | https://laravel-livewire.com/docs/2.x/alpine-js/ |
+| recurso     | url                                                               |
+| :---------- | :---------------------------------------------------------------- |
+| Tailwindcss | https://tailwindcss.com/docs/                                     |
+| Tailwindui  | https://tailwindui.com/documentation/                             |
+| Livewire    | https://laravel-livewire.com/                                     |
+| Alphine     | https://laravel-livewire.com/docs/2.x/alpine-js/                  |
+| AdminLTE    | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Installation |
 
 
 | No.  |                                                     Titulo | Avance |
