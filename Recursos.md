@@ -1,10 +1,13 @@
-| recurso     | url                                                               |
-| :---------- | :---------------------------------------------------------------- |
-| Tailwindcss | https://tailwindcss.com/docs/                                     |
-| Tailwindui  | https://tailwindui.com/documentation/                             |
-| Livewire    | https://laravel-livewire.com/                                     |
-| Alphine     | https://laravel-livewire.com/docs/2.x/alpine-js/                  |
-| AdminLTE    | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Installation |
+| recurso            | url                                                               |
+| :----------------- | :---------------------------------------------------------------- |
+| Laravel Docs       | https://laravel.com/docs/7.x/                                     |
+| AdminLTE           | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Installation |
+| Livewire           | https://laravel-livewire.com/                                     |
+| Alphine            | https://laravel-livewire.com/docs/2.x/alpine-js/                  |
+| Tailwindui         | https://tailwindui.com/documentation/                             |
+| Tailwindcss        | https://tailwindcss.com/docs/                                     |
+| Laravel Collective | https://laravelcollective.com/docs/6.x/html                       |
+| stringToSlug       | https://leocaseiro.com.br/jquery-plugin-string-to-slug/           |
 
 
 | No.  |                                                     Titulo | Avance |
