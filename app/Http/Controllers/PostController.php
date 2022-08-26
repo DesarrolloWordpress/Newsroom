@@ -26,7 +26,6 @@ class PostController extends Controller
      */
     public function index()
     {
-
         /*if (!\Auth::user()->hasRole('admin') && !\Auth::user()->hasRole('manager') && !\Auth::user()->hasRole('content-editor')) {
             $posts = Post::where('userId', \Auth::user()->id)->orderBy('id', 'desc')
                 ->get();
