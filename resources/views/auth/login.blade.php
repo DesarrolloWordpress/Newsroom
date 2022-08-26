@@ -1,4 +1,5 @@
-@extends('layouts.main_home')
+{{-- @extends('layouts.main_home') --}}
+@extends('adminlte::auth.login')
 @section('styles')
     <link href="css/home.css" rel="stylesheet">
     <style>
