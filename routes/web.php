@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardCotroller;
+use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -19,28 +21,14 @@ Route::get('/', function () {
 });
 
 /**
- * AUTH CRUD
+ * AUTH
  */
-/*Route::get('/login', function () {
-    return view('auth.login');
-});
-Route::post('/login', function () {
-    $credentials = request()->only('email', 'password');
-
-    if (Auth::attempt($credentials)) {
-        request()->session()->regenerate();
-
-        return redirect('home');
-    }
-
-    return redirect('login');
-});*/
+Auth::routes();
 
 /**
  * USER
  */
-Auth::routes();
-Route::post('logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('logout');
+Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/', 'HomeController@index')->name('home');
 
@@ -48,7 +36,3 @@ Route::get('/', 'HomeController@index')->name('home');
  * POST CRUD
  */
 Route::get('/post/{post}', 'PostController@show')->name('post.show');
-
-/* Route::resource('posts', 'PostsController'); */
-
-/*Route::get('/home', 'HomeController@index')->name('home');*/
