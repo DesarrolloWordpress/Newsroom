@@ -13,11 +13,15 @@ class PostSeeder extends Seeder
      */
     public function run()
     {
-        $posts = factory(Post::class, 250)->create();
+        $posts = factory(Post::class, 350)->create();
         foreach ($posts as $post) {
             factory(Image::class, 1)->create([
                 'imageable_id' => $post->id,
                 'imageable_type' => Post::class
+            ]);
+            $post->tags()->attach([
+                rand(1, 7),
+                rand(8, 15),
             ]);
         }
     }
