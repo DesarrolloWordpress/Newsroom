@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardCotroller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\UserCotroller;
 
@@ -14,12 +15,13 @@ use App\Http\Controllers\Admin\UserCotroller;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 /**
  * CRUD RUTAS DE USUARIOS
  */
 
-Route::resource('users', UserCotroller::class)->name('admin.users');
+// Route::resource('users', UserCotroller::class)->name('users');
+
+/**
+ * DASHBOARD
+ */
+Route::get('', [DashboardCotroller::class, 'index'])->name('dashboard.index');
