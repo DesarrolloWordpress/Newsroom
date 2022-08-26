@@ -1,8 +1,10 @@
 <?php
 
+use \Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardCotroller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\UserCotroller;
+use App\Http\Controllers\Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +27,8 @@ use App\Http\Controllers\Admin\UserCotroller;
  * DASHBOARD
  */
 Route::get('', [DashboardCotroller::class, 'index'])->name('dashboard.index');
+
+/**
+ * CATEGORY CRUD
+ */
+route::resource('categories', CategoryController::class)->names('admin.categories');
