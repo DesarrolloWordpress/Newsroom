@@ -1,14 +1,8 @@
 {{-- @extends('layouts.main_home') --}}
 @extends('adminlte::auth.login')
-@section('styles')
-    <link href="css/home.css" rel="stylesheet">
-    <style>
-    </style>
-@endsection
-@section('scripts')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script></script>
-@endsection
+
+@section('title', 'Login - Newsroom')
+
 @section('content')
     <div class="container py-5 my-5">
         <div class="row justify-content-center">
