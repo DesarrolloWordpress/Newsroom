@@ -2,6 +2,7 @@
 
 use \Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardCotroller;
+use \Admin\TagController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\UserCotroller;
 use App\Http\Controllers\Controller;
@@ -32,3 +33,8 @@ Route::get('', [DashboardCotroller::class, 'index'])->name('dashboard.index');
  * CATEGORY CRUD
  */
 route::resource('categories', CategoryController::class)->names('admin.categories');
+
+/**
+ * TAG CRUD
+ */
+route::resource('tags', TagController::class)->names('admin.tags');
