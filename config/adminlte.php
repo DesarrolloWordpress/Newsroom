@@ -107,7 +107,7 @@ return [
     */
 
     'preloader' => [
-        'enabled' => true,
+        'enabled' => false,
         'img' => [
             'path' => 'images/reyma_logo.png',
             'alt' => 'Newsroom Preloader Image',
@@ -325,8 +325,8 @@ return [
             'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
+            'text' => 'Etiquetas',
+            'route'  => 'admin.tags.index',
             'icon' => 'fas fa-fw fa-lock',
         ],
         [
@@ -487,6 +487,37 @@ return [
                     'type' => 'js',
                     'asset' => false,
                     'location' => '//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js',
+                ],
+            ],
+        ],
+        'stringToSlug' => [
+            'active' => false,
+            'files' => [
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.min.js',
+                ],
+            ],
+        ],
+        'colorpicker' => [
+            'active' => false,
+            'files' => [
+                [
+                    'type' => 'css',
+                    'asset' => false,
+                    'location' => '//cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.3.6/css/bootstrap-colorpicker.css',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => false,
+                    'location' => '//cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.3.6/js/bootstrap-colorpicker.js',
+                ],
+
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/colorpicker/colorpicker.js',
                 ],
             ],
         ],
