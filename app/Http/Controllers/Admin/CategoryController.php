@@ -39,7 +39,22 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'slug' => 'required|unique:categories',
+            'color' => ['required', 'regex:/^(#(?:[0-9a-f]{2}){2,4}|#[0-9a-f]{3}|(?:rgba?|hsla?)\((?:\d+%?(?:deg|rad|grad|turn)?(?:,|\s)+){2,3}[\s\/]*[\d\.]+%?\))$/i']
+        ]);
+
+        $category = Category::create($request->all());
+        /* $category = [
+            'name' => $request['name'],
+            'slug' => $request['slug'],
+        ];
+        if ($request['color'])
+            $category = array_merge($category, ['color' => $request['color']]);
+        $category = Category::create($category); */
+
+        return redirect()->route('admin.categories.edit', $category)->with('info', 'La categoría se creó con éxito.');
     }
 
     /**
@@ -73,7 +88,23 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'slug' => "required|unique:categories,slug,$category->id",
+            'color' => ['required', 'regex:/^(#(?:[0-9a-f]{2}){2,4}|#[0-9a-f]{3}|(?:rgba?|hsla?)\((?:\d+%?(?:deg|rad|grad|turn)?(?:,|\s)+){2,3}[\s\/]*[\d\.]+%?\))$/i']
+        ]);
+
+        $category->update($request->all());
+        /*$dataCat = array();
+        $dataCat = [
+            'name' => $request['name'],
+            'slug' => $request['slug'],
+        ];
+        if ($request['color'])
+            $dataCat = array_merge($dataCat, ['color' => $request['color']]);
+        $category->update($dataCat);*/
+
+        return redirect()->route('admin.categories.edit', $category)->with('info', 'La categoría se actualizó con éxito.');
     }
 
     /**
@@ -84,6 +115,8 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        $category->delete();
+
+        return redirect()->route('admin.categories.index')->with('info', 'La categoría se elimino con éxito.');
     }
 }

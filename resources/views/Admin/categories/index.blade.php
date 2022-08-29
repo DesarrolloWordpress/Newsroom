@@ -3,28 +3,38 @@
 @section('title', 'Dashboard - Newsroom')
 
 @section('content_header')
-    <h1>Lista de Categoría</h1>
+    <div class="row">
+        <h1 class="col-auto">Lista de Categoría</h1>
+        <div class="col-auto">
+            <a class="btn btn-outline-primary" href="{{ route('admin.categories.create') }}">Agregar categoría</a>
+        </div>
+    </div>
 @stop
 
 @section('content')
     <div class="content">
-        <div class="card">
-            <div class="card-header">
-                <a class="btn btn-secondary" href="{{ route('admin.categories.create') }}">Agregar categoría</a>
+
+        @if (session('info'))
+            <div class="alert alert-success">
+                <strong>{{ session('info') }}</strong>
             </div>
+        @endif
+        <div class="card">
             <div class="card-body">
                 <table class="table table-striped">
                     <thead>
                         <tr>
                             <th>ID</th>
                             <th>Nombre</th>
+                            <th>Slug</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($categories as $category)
                             <tr>
-                                <td>{{ $category->id }}</td>
+                                <td width='50px'>{{ $category->id }}</td>
                                 <td>{{ $category->name }}</td>
+                                <td>{{ $category->slug }}</td>
                                 <td width='10px'><a href="{{ route('admin.categories.edit', $category) }}"
                                         class="btn btn-primary btn-sm">Editar</a>
                                 </td>
