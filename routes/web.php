@@ -2,7 +2,10 @@
 
 use App\Http\Controllers\Admin\DashboardCotroller;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\mailingController;
+use App\Mail\MailingMail;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 /**
  * AUTH
@@ -36,3 +39,8 @@ Route::get('/', 'HomeController@index')->name('home');
  * POST CRUD
  */
 Route::get('/post/{post}', 'PostController@show')->name('post.show');
+
+/**
+ * MAIL
+ */
+Route::post('mailing', [mailingController::class, 'store'])->name('emails.mailing.store');
