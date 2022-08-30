@@ -41,13 +41,14 @@
                 <div class="menu_head hidden sm:block sm:ml-6">
                     <div class="flex space-x-4">
                         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                        <a href="#" class="active text-white px-3 py-2 rounded-md text-sm font-semibold"
+                        <a href="{{ route('home') }}"
+                            class="active text-white px-3 py-2 rounded-md text-sm font-semibold"
                             aria-current="page">Inicio</a>
 
-                        <a href="#"
+                        <a href="{{ route('external.reyma.home') }}"
                             class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-semibold">Reyma</a>
 
-                        <a href="#"
+                        <a href="{{ route('external.reyma.contactanos') }}"
                             class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-semibold">Contáctanos</a>
                     </div>
                 </div>
@@ -125,27 +126,12 @@
     <div x-show="open" x-on:click.away="open = false" class="menu_head sm:hidden" id="mobile-menu">
         <div class="px-2 pt-2 pb-3 space-y-1">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <a href="#" class="active text-white block px-3 py-2 rounded-md text-base font-semibold"
+            <a href="{{ route('home') }}" class="active text-white block px-3 py-2 rounded-md text-base font-semibold"
                 aria-current="page">Inicio</a>
-            <a href="#"
+            <a href="{{ route('external.reyma.home') }}"
                 class="text-gray-300 hover:bg-azul3 hover:text-white block px-3 py-2 rounded-md text-base font-semibold">Reyma</a>
-            <a href="#"
+            <a href="{{ route('external.reyma.contactanos') }}"
                 class="text-gray-300 hover:bg-azul3 hover:text-white block px-3 py-2 rounded-md text-base font-semibold">Contáctanos</a>
         </div>
     </div>
 </nav>
-
-{{-- .
-
-1.- Jonás Soto
-2.- Zucco
-
-
-1.- Omar Villagómez.
-2.- Emmanuel M.
-3.- Guillermo .
-4.- Daniel B.
-
-.
-
-Responsable: Daniel Bueno Esparza --}}
