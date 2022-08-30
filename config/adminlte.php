@@ -513,7 +513,6 @@ return [
                     'asset' => false,
                     'location' => '//cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.3.6/js/bootstrap-colorpicker.js',
                 ],
-
                 [
                     'type' => 'js',
                     'asset' => true,

@@ -13,7 +13,7 @@
  *   http://www.gnu.org/licenses/gpl.html
  */
 
-jQuery.fn.stringToSlug = function(options) {
+jQuery.fn.stringToSlug = function (options) {
 	var defaults = {
 		setEvents: 'keyup keydown blur', //set Events that your script will work
 		getPut: '#permalink', //set output field
@@ -35,7 +35,7 @@ jQuery.fn.stringToSlug = function(options) {
 
 		var chars = []; //Cria vetor de caracteres
 		for (var i = 0; i < 32; i++) {
-			chars.push ('');
+			chars.push('');
 		}
 
 		/*** Abaixo a lista de caracteres ***/
@@ -427,15 +427,15 @@ jQuery.fn.stringToSlug = function(options) {
 
 		//TODO: Support in Cyrillic, Arabic, CJK
 
-		var stringToSlug = new String (); //Create a stringToSlug String Object
+		var stringToSlug = new String(); //Create a stringToSlug String Object
 		var lenChars = chars.length; // store length of the array
-		for (var i = 0; i < text.length; i ++) {
+		for (var i = 0; i < text.length; i++) {
 			var cCAt = text.charCodeAt(i);
-			if(cCAt < lenChars) stringToSlug += chars[cCAt]; //Insert values converts at slugs (if it exists in the array)
+			if (cCAt < lenChars) stringToSlug += chars[cCAt]; //Insert values converts at slugs (if it exists in the array)
 		}
 
-		stringToSlug = stringToSlug.replace (new RegExp ('\\'+defaults.space+'{2,}', 'gmi'), defaults.space); // Remove any space character followed by Breakfast
-		stringToSlug = stringToSlug.replace (new RegExp ('(^'+defaults.space+')|('+defaults.space+'$)', 'gmi'), ''); // Remove the space at the beginning or end of string
+		stringToSlug = stringToSlug.replace(new RegExp('\\' + defaults.space + '{2,}', 'gmi'), defaults.space); // Remove any space character followed by Breakfast
+		stringToSlug = stringToSlug.replace(new RegExp('(^' + defaults.space + ')|(' + defaults.space + '$)', 'gmi'), ''); // Remove the space at the beginning or end of string
 
 		stringToSlug = stringToSlug.toLowerCase(); //Convert your slug in lowercase
 
@@ -443,12 +443,22 @@ jQuery.fn.stringToSlug = function(options) {
 		jQuery(defaults.getPut).val(stringToSlug); //Write in value to input fields (input text, textarea, input hidden, ...)
 		jQuery(defaults.getPut).html(stringToSlug); //Write in HTML tags (span, p, strong, h1, ...)
 
-		if(defaults.callback!=false){
+		if (defaults.callback != false) {
 			defaults.callback(stringToSlug);
 		}
 
 		return this;
 	});
 
-  return this;
+	return this;
 };
+/**
+ * Nombre a Slug
+ */
+$(document).ready(function () {
+	$("#name").stringToSlug({
+		setEvents: 'keyup keydown blur',
+		getPut: '#slug',
+		space: '-'
+	});
+});
