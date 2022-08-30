@@ -8,6 +8,7 @@
 | Tailwindcss        | https://tailwindcss.com/docs/                                     |
 | Laravel Collective | https://laravelcollective.com/docs/6.x/html                       |
 | stringToSlug       | https://leocaseiro.com.br/jquery-plugin-string-to-slug/           |
+| MailTrap           | https://mailtrap.io/                                              |
 
 
 | No.  |                                                     Titulo | Avance |
