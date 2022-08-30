@@ -48,6 +48,8 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapAdminRoutes();
 
+        $this->mapExternalRoutes();
+
         //
     }
 
@@ -93,5 +95,20 @@ class RouteServiceProvider extends ServiceProvider
             ->prefix('admin')
             ->namespace($this->namespace)
             ->group(base_path('routes/admin.php'));
+    }
+
+    /**
+     * Define the "external" routes for the application.
+     *
+     * These routes all external.
+     *
+     * @return void
+     */
+    protected function mapExternalRoutes()
+    {
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->name('external.')
+            ->group(base_path('routes/external.php'));
     }
 }

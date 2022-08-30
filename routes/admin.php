@@ -21,7 +21,6 @@ use App\Http\Controllers\Controller;
 /**
  * CRUD RUTAS DE USUARIOS
  */
-
 // Route::resource('users', UserCotroller::class)->name('users');
 
 /**
