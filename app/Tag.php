@@ -6,6 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tag extends Model
 {
+    protected $fillable = ['name', 'slug', 'color'];
+
+    public function getRouteKeyName()
+    {
+        return "slug";
+    }
+
     /**
      * Relaión muchos a muchos
      */
