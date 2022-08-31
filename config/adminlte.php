@@ -302,44 +302,55 @@ return [
         ],
 
         // Sidebar items:
-        [
+        /*[
             'type' => 'sidebar-menu-search',
             'text' => 'search',
-        ],
-        [
+        ],*/
+        /*[
             'text' => 'blog',
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
-        ],
+        ],*/
         [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
+            'text'        => 'DASHBOARD',
+            'url'         => '/admin',
+            'icon'        => 'fas fa-tachometer-alt',
         ],
-        ['header' => 'ADMINISTRADOR'],
+        ['header' => 'ENTRADAS'],
         [
             'text' => 'Categorias',
             'route'  => 'admin.categories.index',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => 'fas fa-fw fa-sitemap',
+            //'icon' => 'fab fa-buffer',
         ],
         [
             'text' => 'Etiquetas',
             'route'  => 'admin.tags.index',
-            'icon' => 'fas fa-fw fa-lock',
+            'icon' => 'fas fa-solid fa-tags',
+        ],
+        ['header' => 'OPCIONES DE BLOG'],
+        [
+            'text'       => 'Lista de post',
+            'route'        => 'admin.posts.index',
+            'icon' => 'fas fa-clipboard-list',
         ],
         [
+            'text'       => 'Crear nuevo post',
+            'route'        => 'admin.posts.create',
+            'icon' => 'fas fa-file',
+        ],
+        /* [
             'text'    => 'multilevel',
+            'url'  => 'admin.tags.index',
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
                 [
-                    'text' => 'level_one',
-                    'url'  => '#',
+                    'text' => 'dddd ',
+                    'route'  => 'admin.categories.index',
                 ],
                 [
                     'text'    => 'level_one',
-                    'url'     => '#',
+                    'route'     => 'admin.tags.index',
                     'submenu' => [
                         [
                             'text' => 'level_two',
@@ -366,23 +377,7 @@ return [
                     'url'  => '#',
                 ],
             ],
-        ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
-        ],
+        ],*/
     ],
 
     /*
@@ -520,6 +515,17 @@ return [
                 ],
             ],
         ],
+        'ckeditor' => [
+            'active' => false,
+            'files' => [
+                [
+                    'type' => 'css',
+                    'asset' => false,
+                    'location' => '//cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js',
+                ],
+
+            ],
+        ],
     ],
 
     /*
@@ -567,5 +573,5 @@ return [
     |
     */
 
-    'livewire' => false,
+    'livewire' => true,
 ];
