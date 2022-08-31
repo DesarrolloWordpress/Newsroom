@@ -1,11 +1,12 @@
 <?php
 
-use \Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardCotroller;
-use \Admin\TagController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\UserCotroller;
 use App\Http\Controllers\Controller;
+use \Admin\CategoryController;
+use \Admin\TagController;
+use \Admin\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,3 +38,8 @@ route::resource('categories', CategoryController::class)->names('admin.categorie
  * TAG CRUD
  */
 route::resource('tags', TagController::class)->names('admin.tags');
+
+/**
+ * POST CRUD
+ */
+route::resource('posts', PostController::class)->names('admin.posts');
