@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Tag;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class TagController extends Controller
@@ -46,7 +46,7 @@ class TagController extends Controller
 
         $tags = Tag::create($request->all());
 
-        return redirect()->route('admin.categories.edit', $tags)->witch('info', 'La etiqueta se creó con éxito.');
+        return redirect()->route('admin.tags.edit', $tags)->with('info', 'La etiqueta se creó con éxito.');
     }
 
     /**
@@ -80,7 +80,13 @@ class TagController extends Controller
      */
     public function update(Request $request, Tag $tag)
     {
-        $request->validate($request->all());
+        $request->validate([
+            'name' => 'required',
+            'slug' => "required|unique:categories,slug,$tag->id",
+            'color' => ['required', 'regex:/^(#(?:[0-9a-f]{2}){2,4}|#[0-9a-f]{3}|(?:rgba?|hsla?)\((?:\d+%?(?:deg|rad|grad|turn)?(?:,|\s)+){2,3}[\s\/]*[\d\.]+%?\))$/i']
+        ]);
+
+        $tag->update($request->all());
 
         return redirect()->route('admin.tags.edit', $tag)->with('info', 'La categoría se actualizo con éxito.');
     }
