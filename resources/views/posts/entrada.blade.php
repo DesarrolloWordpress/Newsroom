@@ -1,7 +1,11 @@
 @foreach ($posts as $post)
     <div class="col-xl-4 col-md-6 my-[2em]">
         <div class="max-h-[270px] h-full">
-            <img class="img-thumbnail object-cover mt-5 h-full w-full" src="{{ Storage::url($post->image->url) }}"
+            <img class="img-thumbnail object-cover mt-5 h-full w-full"
+                src="@if ($post->image) {{ Storage::url($post->image->url) }}
+                @else
+                {{ asset('images/default/img_default.jpg') }} @endif
+                "
                 alt="post_image">
         </div>
         <div class="">
@@ -34,7 +38,7 @@
                 </a>
                 <div class="post_content_ext">
                     <p>
-                        {!! substr($post['content'], 0, 100) !!}
+                        {!! substr($post['extract'], 0, 100) !!}
                     </p>
                 </div>
             </div>
