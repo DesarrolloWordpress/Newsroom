@@ -3,10 +3,10 @@
 @section('title', 'Dashboard - Newsroom')
 
 @section('plugins.stringToSlug', true)
-{{-- @section('plugins.colorpicker', true) --}}
+@section('plugins.colorpicker', true)
 
 @section('content_header')
-    <h1>Editar Categoría</h1>
+    <h1>Editar Etiqueta</h1>
 @stop
 
 @section('content')
