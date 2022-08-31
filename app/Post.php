@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
+
+    protected $guarded = ['id', 'created_at', 'updated_at'];
+
     /**
      * Relación uno a muchos inversa
      */
@@ -18,6 +21,7 @@ class Post extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
     /**
      * Relación muchos a muchos
      */
