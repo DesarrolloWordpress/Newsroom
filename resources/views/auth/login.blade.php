@@ -1,4 +1,3 @@
-{{-- @extends('layouts.main_home') --}}
 @extends('adminlte::auth.login')
 
 @section('title', 'Login - Newsroom')

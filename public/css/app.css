@@ -9277,3 +9277,15 @@ h3 {
     border-color: #dee2e6;
   }
 }
+/**
+* Colores NEWSROOM
+*/
+.bg-nw-primary {
+  background-color: #052453;
+}
+
+.text-nw-primary {
+  color: #052453;
+  -moz-column-gap: 1;
+       column-gap: 1;
+}

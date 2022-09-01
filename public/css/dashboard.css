@@ -1,0 +1,21 @@
+/**
+* Colores NEWSROOM
+*/
+:root {
+    --blue-primary: #052453;
+}
+
+/**
+* LOGIN
+*/
+/*.login-box .card-primary.card-nw-outline,
+.register-box .card-primary.card-nw-outline {
+    border-color: #052453;
+}
+
+.btn.bg-nw-primary {
+    background-color: #052453;
+}
+.text-nw-primary {
+    color: #052453;
+}*/

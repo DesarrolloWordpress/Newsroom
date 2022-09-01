@@ -14,8 +14,8 @@ return [
     |
     */
 
-    'title' => 'Newsroom',
-    'title_prefix' => '',
+    'title' => '',
+    'title_prefix' => 'Newsroom | ',
     'title_postfix' => '',
 
     /*
@@ -48,7 +48,7 @@ return [
     */
 
     'google_fonts' => [
-        'allowed' => true,
+        'allowed' => false,
     ],
 
     /*
@@ -150,8 +150,8 @@ return [
 
     'layout_topnav' => null,
     'layout_boxed' => null,
-    'layout_fixed_sidebar' => null,
-    'layout_fixed_navbar' => null,
+    'layout_fixed_sidebar' => true,
+    'layout_fixed_navbar' => true,
     'layout_fixed_footer' => null,
     'layout_dark_mode' => null,
 
@@ -167,12 +167,12 @@ return [
     |
     */
 
-    'classes_auth_card' => 'card-outline card-primary',
+    'classes_auth_card' => 'card-nw-outline card-outline card-primary',
     'classes_auth_header' => '',
     'classes_auth_body' => '',
     'classes_auth_footer' => '',
     'classes_auth_icon' => '',
-    'classes_auth_btn' => 'btn-flat btn-primary',
+    'classes_auth_btn' => 'btn-flat bg-nw-primary btn-primary',
 
     /*
     |--------------------------------------------------------------------------
@@ -291,11 +291,11 @@ return [
 
     'menu' => [
         // Navbar items:
-        [
+        /*[
             'type'         => 'navbar-search',
             'text'         => 'search',
             'topnav_right' => true,
-        ],
+        ],*/
         [
             'type'         => 'fullscreen-widget',
             'topnav_right' => true,
@@ -522,6 +522,17 @@ return [
                     'type' => 'css',
                     'asset' => false,
                     'location' => '//cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js',
+                ],
+
+            ],
+        ],
+        'newsroom' => [
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => 'css/dashboard.css',
                 ],
 
             ],

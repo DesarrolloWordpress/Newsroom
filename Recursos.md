@@ -11,6 +11,12 @@
 | MailTrap           | https://mailtrap.io/                                              |
 
 
+| color   | código HEX |
+| :------ | :--------- |
+| primary | #052453    |
+|         |            |
+
+
 | No.  |                                                     Titulo | Avance |
 | ---- | ---------------------------------------------------------: | :----: |
 | 1.-  |                                               CAPACITACIÓN |   x    |
