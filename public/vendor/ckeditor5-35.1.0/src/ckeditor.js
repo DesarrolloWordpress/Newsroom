@@ -2,7 +2,7 @@
  * @license Copyright (c) 2014-2022, CKSource Holding sp. z o.o. All rights reserved.
  * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
  */
-import DecoupledDocumentEditor from '@ckeditor/ckeditor5-editor-decoupled/src/decouplededitor.js';
+import ClassicEditor from '@ckeditor/ckeditor5-editor-classic/src/classiceditor.js';
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment.js';
 import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat.js';
 import BlockQuote from '@ckeditor/ckeditor5-block-quote/src/blockquote.js';
@@ -48,7 +48,7 @@ import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformatio
 import TodoList from '@ckeditor/ckeditor5-list/src/todolist';
 import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline.js';
 
-class Editor extends DecoupledDocumentEditor {}
+class Editor extends ClassicEditor { }
 
 // Plugins to include in the build.
 Editor.builtinPlugins = [
