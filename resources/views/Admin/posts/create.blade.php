@@ -4,6 +4,7 @@
 
 @section('plugins.stringToSlug', true)
 
+
 @section('content_header')
     <h1>Crear nuevo Post</h1>
 @stop
@@ -25,19 +26,10 @@
 @stop
 
 @section('js')
-    <script src="https://cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js"></script>
+    <script src="{{ asset('vendor/ckeditor5-35.1.0/build/ckeditor.js') }}"></script>
+    <script src="{{ asset('vendor/ckeditor5-35.1.0/build/_ckeditor-asignacion.js') }}"></script>
 
     <script>
-        ClassicEditor
-            .create(document.querySelector('#extract'))
-            .catch(error => {
-                console.error(error);
-            });
-
-        ClassicEditor.create(document.querySelector('#body')).catch(error => {
-            console.error(error);
-        });
-
         /**
          * Cambio de imagen
          */
