@@ -515,13 +515,13 @@ return [
                 ],
             ],
         ],
-        'ckeditor' => [
+        'ckeditor5' => [
             'active' => false,
             'files' => [
                 [
-                    'type' => 'css',
+                    'type' => 'js',
                     'asset' => false,
-                    'location' => '//cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js',
+                    'location' => '//cdn.ckeditor.com/ckeditor5/35.0.1/decoupled-document/ckeditor.js',
                 ],
 
             ],
