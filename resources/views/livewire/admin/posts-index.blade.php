@@ -21,14 +21,20 @@
                             <td>{{ $post->id }}</td>
                             <td>{{ $post->name }}</td>
                             <td>{{ $post->user->name }}</td>
-                            <td>{{ $post->category->name }}</td>
                             <td>
-                                @foreach ($post->tags as $index => $tag)
-                                    {{ $tag->name }}
-                                    @if ($index != count($post->tags) - 1)
-                                        ,
-                                    @endif
-                                @endforeach
+                                @if ($post->category)
+                                    {{ $post->category->name }}
+                                @endif
+                            </td>
+                            <td>
+                                @if ($post->tags)
+                                    @foreach ($post->tags as $index => $tag)
+                                        {{ $tag->name }}
+                                        @if ($index != count($post->tags) - 1)
+                                            ,
+                                        @endif
+                                    @endforeach
+                                @endif
                             </td>
                             <td width="10px"><a class="btn btn-primary btn-sm"
                                     href="{{ route('admin.posts.edit', $post) }}">Editar</a></td>

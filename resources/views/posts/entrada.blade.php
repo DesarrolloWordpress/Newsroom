@@ -12,8 +12,12 @@
             <div class="row mt-3">
                 <div class="post_category col-md-6">
                     {{-- @foreach ($post->category as $category) --}}
-                    <label class="text--[{{ $post->category->color }}]" for=""
-                        style="font-weight: 600;font-size: 16px;">{{ $post->category->name }}
+                    <label
+                        class="@if ($post->category) text--[{{ $post->category->color }}] @else text--[ncategory] @endif"
+                        for="" style="font-weight: 600;font-size: 16px;">
+                        @if ($post->category)
+                            {{ $post->category->name }}
+                        @endif
                     </label>
                     @foreach ($post->tags as $tag)
                         {{-- <label class="" for=""
