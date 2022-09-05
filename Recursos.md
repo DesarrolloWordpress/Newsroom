@@ -1,14 +1,15 @@
-| recurso            | url                                                               |
-| :----------------- | :---------------------------------------------------------------- |
-| Laravel Docs       | https://laravel.com/docs/7.x/                                     |
-| AdminLTE           | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Installation |
-| Livewire           | https://laravel-livewire.com/                                     |
-| Alphine            | https://laravel-livewire.com/docs/2.x/alpine-js/                  |
-| Tailwindui         | https://tailwindui.com/documentation/                             |
-| Tailwindcss        | https://tailwindcss.com/docs/                                     |
-| Laravel Collective | https://laravelcollective.com/docs/6.x/html                       |
-| stringToSlug       | https://leocaseiro.com.br/jquery-plugin-string-to-slug/           |
-| MailTrap           | https://mailtrap.io/                                              |
+| recurso            | url                                                               | observaciones                                                                                                   |
+| :----------------- | :---------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------- |
+| Laravel Docs       | https://laravel.com/docs/7.x/                                     |                                                                                                                 |
+| AdminLTE           | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Installation |                                                                                                                 |
+| Livewire           | https://laravel-livewire.com/                                     |                                                                                                                 |
+| Alphine            | https://laravel-livewire.com/docs/2.x/alpine-js/                  |                                                                                                                 |
+| Tailwindui         | https://tailwindui.com/documentation/                             |                                                                                                                 |
+| Tailwindcss        | https://tailwindcss.com/docs/                                     |                                                                                                                 |
+| Laravel Collective | https://laravelcollective.com/docs/6.x/html                       |                                                                                                                 |
+| stringToSlug       | https://leocaseiro.com.br/jquery-plugin-string-to-slug/           |                                                                                                                 |
+| MailTrap           | https://mailtrap.io/                                              |                                                                                                                 |
+| mkcert             | https://github.com/FiloSottile/mkcert                             | https://www.jasoft.org/Blog/post/como-generar-certificados-https-para-desarrollo-local-que-no-produzcan-errores |
 
 
 | color   | código HEX |
