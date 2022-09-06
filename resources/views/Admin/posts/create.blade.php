@@ -10,19 +10,17 @@
 @stop
 
 @section('content')
-    <div class="card">
-        <div class="card-body">
-            {!! Form::open(['route' => 'admin.posts.store', 'files' => true]) !!} {{-- , 'autocomplete' => 'off' --}}
+    {{-- <div class="card">
+        <div class="card-body"> --}}
+    {!! Form::open(['route' => 'admin.posts.store', 'files' => true]) !!} {{-- , 'autocomplete' => 'off' --}}
 
-            {!! Form::hidden('user_id', auth()->user()->id) !!}
+    {!! Form::hidden('user_id', auth()->user()->id) !!}
 
-            @include('admin.posts.partials.form')
+    @include('admin.posts.partials.form')
 
-            {!! Form::submit('Crear post', ['class' => 'btn btn-primary']) !!}
-
-            {!! Form::close() !!}
-        </div>
-    </div>
+    {!! Form::close() !!}
+    {{-- </div>
+    </div> --}}
 @stop
 
 @section('js')
