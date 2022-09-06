@@ -105,7 +105,9 @@ ClassicEditor.create(document.querySelector('#body'), {
             'undo',
             'redo',
         ],
-        shouldNotGroupWhenFull: true
+        shouldNotGroupWhenFull: true,
+        filebrowserUploadUrl: 'ckeditor5-35.1.0/plugins/upload_file/ck_upload.php',
+        filebrowserUploadMethod: 'form'
     },
     removePlugins: ["MediaEmbedToolbar"],
 })
@@ -125,7 +127,7 @@ ClassicEditor.create(document.querySelector('#body'), {
     });
 
 $(document).ready(function () {
-    var contenedorck = document.querySelectorAll('.ck.ck-content.ck-editor__editable > *');
+    /* var contenedorck = document.querySelectorAll('.ck.ck-content.ck-editor__editable > *');
     contenedorck.style.maxWidth = '1024px;';
-    contenedorck.style.margin = '0 auto;';
+    contenedorck.style.margin = '0 auto;'; */
 });
