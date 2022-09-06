@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Post;
 use App\Category;
 use App\Tag;
@@ -29,7 +28,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        $categories = Category::pluck('name', 'id');
+        $categories = Category::all(); // pluck('name', 'id');
         $tags = Tag::all();
 
         return view('admin.posts.create', compact('categories', 'tags'));
@@ -79,7 +78,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        $categories = Category::pluck('name', 'id');
+        $categories = Category::all(); // pluck('name', 'id');
         $tags = Tag::all();
 
         return view('admin.posts.edit', compact('post', 'categories', 'tags'));
@@ -95,6 +94,7 @@ class PostController extends Controller
     public function update(PostRequest $request, Post $post)
     {
         $post->update($request->all());
+        // return $request;
 
         if ($request->file('file')) {
             $url = Storage::put('posts', $request->file('file'));
