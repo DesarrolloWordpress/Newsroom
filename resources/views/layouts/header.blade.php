@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> --}}
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Styles -->
@@ -19,11 +19,21 @@
     <style>
         header>nav,
         header.active>nav,
+        :not(header.active)>nav>div,
         .menu_head .space-x-4> :not([hidden])~ :not([hidden]),
         .active .menu_head .space-x-4> :not([hidden])~ :not([hidden]) {
             -webkit-transition: all 0.5s ease-in-out;
             -o-transition: all 0.5s ease-in-out;
             transition: all 0.5s ease-in-out;
+        }
+
+        :not(header.active)>nav>div {
+            transition-delay: 0.5s;
+        }
+
+        :not(header.active)>nav>div {
+            border-color: #8793ad !important;
+            border-bottom: solid 2px;
         }
 
         .menu_head {
