@@ -41,26 +41,29 @@
 @section('banner-fondo-inicio')
     <div class="px-3"
         style="background-image: URL('{{ asset('images/home/instalaciones_banderas.jpg') }}'); background-size: cover; background-repeat: no-repeat;">
-        <div class="banner_head_home w-100">
-            <div class="container-md" style="color: #FFF">
-                <div class="col-auto d-flex justify-content-center">
-                    <div class="col-auto cont_img_b d-flex justify-content-end">
-                        <img src="{{ asset('images/home/reyma_logo.png') }}" style="max-width: 230px" />
+        <div class="py-[73px] w-100">
+            <div class="my-[130px] text-[#FFF] mx-auto container flex flex-col">
+                <div class="flex justify-center">
+                    <div class="flex justify-end">
+                        <img class="max-w-[230px] img-thumbnail object-contain"
+                            src="{{ asset('images/home/reyma_logo.png') }}" />
                     </div>
-                    <div class="mx-4" style="border-left:1px solid #FFF;"></div>
-                    <h2 class="col-auto text-left titulo_head_home my-4"> Newsroom </h2>
+                    <div class="mx-4 border-l-[1px] border-l-[#FFF]"></div>
+                    <h2 class="my-4 text-8xl font-bold flex items-center"> Newsroom </h2>
                 </div>
-                <div class="row justify-content-center my-3 pt-5">
-                    <h5 class="text-center mb-4" style="font-size: 2.3rem;font-weight: 700;">Bienvenido</h5>
-                    <p class="txt_font text-center col-md-6">Recibe antes que nadie las noticias relaciondas con los
-                        produtos <span class="txt_bold">REYMA</span>.</p>
+                <div class="my-3 pt-5 flex-row justify-center">
+                    <h5 class="mb-4 text-4xl font-bold text-center">Bienvenido</h5>
+                    <p class="text-lg text-center md:max-w-2lg">Recibe antes que nadie las noticias relaciondas con los
+                        produtos <span class="font-bold">REYMA</span>.</p>
                 </div>
-                <div class="input-group rounded pt-5 justify-content-center buscador_newsroom">
-                    <input type="search" class="form-control rounded bg-transparent" placeholder="Buscar"
-                        aria-label="Search" aria-describedby="search-addon" style="max-width: 320px" />
-                    <span class="input-group-text" id="search-addon">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </span>
+                <div class="pt-5">
+                    <div class="mx-auto flex justify-center">
+                        <input type="search" class="rounded bg-transparent" placeholder="Buscar" aria-label="Search"
+                            aria-describedby="search-addon" style="max-width: 320px" />
+                        <span class="" id="search-addon">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
