@@ -27,11 +27,11 @@
             transition: all 0.5s ease-in-out;
         }
 
-        :not(header.active)>nav>div {
+        header:not(header.active)>nav>div {
             transition-delay: 0.5s;
         }
 
-        :not(header.active)>nav>div {
+        header:not(header.active)>nav>div {
             border-color: #8793ad !important;
             border-bottom: solid 2px;
         }

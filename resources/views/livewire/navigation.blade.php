@@ -4,7 +4,7 @@
             <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 <!-- Mobile menu button-->
                 <button x-on:click="open = true" type="button"
-                    class="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                    class="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-[#539bfd80] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                     aria-controls="mobile-menu" aria-expanded="false">
                     <span class="sr-only">Open main menu</span>
                     <!-- Icon when menu is closed. Heroicon name: outline/menu Menu open: "hidden", Menu closed: "block" -->
@@ -34,10 +34,10 @@
                             aria-current="page">Inicio</a>
 
                         <a href="{{ route('external.reyma.home') }}"
-                            class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-semibold">Reyma</a>
+                            class="text-gray-300 hover:bg-[#539bfd80] hover:text-white px-3 py-2 text-sm font-semibold">Reyma</a>
 
                         <a href="{{ route('external.reyma.contactanos') }}"
-                            class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-semibold">Contáctanos</a>
+                            class="text-gray-300 hover:bg-[#539bfd80] hover:text-white px-3 py-2 text-sm font-semibold">Contáctanos</a>
                     </div>
                 </div>
             </div>

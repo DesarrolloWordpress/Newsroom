@@ -1,4 +1,4 @@
-<ul class="ml-auto flex items-center">
+<ul class="flex justify-center">
     <li
         class="list_ico_share_f min-w-[30px] flex justify-center items-center aspect-square rounded-full inline-block border-transparent border-2 hover:border-blue-400">
         <a class="social-icon" data-tooltip="Facebook" target="_blank" href="{{ route('external.red.facebook.reyma') }}">

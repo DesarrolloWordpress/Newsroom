@@ -1,5 +1,5 @@
 <div class="emailing">
-    <div class="container-md py-5">
+    <div class="py-12 2xl:container">
         <div class="">
             <div class="text-center">
                 <h2>SUSCRÍBETE A NUESTRO MAILING</h2>
@@ -9,18 +9,15 @@
             </div> --}}
         </div>
         <div class="">
-            <form class="frm_news row g-3 needs-validation justify-content-center mt-2"
-                action="{{ route('emails.mailing.store') }}" method="POST">
+            <form class="w-full needs-validation mt-14" action="{{ route('emails.mailing.store') }}" method="POST">
                 @csrf
-                <div class="col-md-4">
-                    <input type="text" name="mailmailing" class="form-control" placeholder="Dirección de correo"
-                        id="mailmailing" required>
-                    <div class="valid-feedback">
-                        good!
-                    </div>
+                <div class="text-center">
+                    <input type="text" name="mailmailing" class="py-2 px-3 w-full max-w-sm border border-black"
+                        placeholder="Dirección de correo" id="mailmailing" required>
                 </div>
-                <div class="col-12 text-center">
-                    <button id="send-msg" class="btn btn-primary btn_mailing_news" type="submit">Enviar</button>
+                <div class="text-center my-3">
+                    <button id="send-msg" class="px-15 py-3 bg-[#539bfd] text-white text-lg font-bold btn_mailing_news"
+                        type="submit">Suscríbirse</button>
                 </div>
             </form>
         </div>

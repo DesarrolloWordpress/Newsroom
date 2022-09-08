@@ -1,26 +1,24 @@
 @section('footer')
-    <footer style="background-color:#f4f4f4;">
-        <div class="container-md p-0">
-            <div class="row_f1 row justify-content-center py-5">
-                <div
-                    class="d-flex align-items-center justify-content-xl-start justify-content-center col-xl-4 col-sm-12 mt-xl-0 mt-md-4">
-                    <img src="{{ asset('images/home/reyma_logo.png') }}" style="max-width: 160px" />
+    <footer class="bg-[#f4f4f4]">
+        <div class="py-5 max-w-screen-2xl mx-auto grid grid-cols-3 gap-5">
+            <div class="">
+                <img src="{{ asset('images/home/reyma_logo.png') }}" style="max-width: 160px" />
+            </div>
+            <div class="">
+                <div class="text-center">
+                    <h5>Siguenos en:</h5>
+                    @include('layouts.socialshare')
                 </div>
-                <div class="row_f2 d-flex justify-content-center align-items-center col-xl-4 col-sm-12 mt-xl-0 mt-md-4">
-                    <div class="text-center">
-                        <h5>Siguenos en:</h5>
-                        @include('layouts.socialshare')
-                    </div>
-                </div>
-                <div class="row_f3 text-right col-xl-4 col-sm-12 mt-xl-0 mt-md-4">
-                    <p class="text-xl-end text-center">Blvd. Hermanos Aldama No. 4321, <br> Ciudad Industrial. 37490 Léon,
-                        Gto.</p>
-                    <p class="text-xl-end text-center bold_txt_foo">
-                        <a href="tel:4777889900"> Tel: 477 7889 900 </a>
-                        <br>
-                        <a href="https://reyma.com.mx/" target="_blank"> www.reyma.com.mx </a>
-                    </p>
-                </div>
+            </div>
+            <div class="">
+                <p class="text-xl-end text-center">Blvd. Hermanos Aldama No. 4321, <br> Ciudad Industrial. 37490 Léon,
+                    Gto.</p>
+                <hr>
+                <p class="text-xl-end text-center bold_txt_foo">
+                    <a href="tel:4777889900"> Tel: 477 7889 900 </a>
+                    <br>
+                    <a href="https://reyma.com.mx/" target="_blank"> www.reyma.com.mx </a>
+                </p>
             </div>
         </div>
         <div class="footer_copy">
