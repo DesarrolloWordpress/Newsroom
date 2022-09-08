@@ -11,7 +11,7 @@ class PostsIndex extends Component
 
     use WithPagination;
 
-    protected $paginationTheme = "bootstrap";
+    // protected $paginationTheme = "tailwind";
     public $search;
 
     public function updatingSearh()
