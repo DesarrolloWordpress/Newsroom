@@ -5,9 +5,9 @@ Colores
 #f4f4f4 - fondos
 #539bfd - botones
 */
-@font-face {
+/* @font-face {
     font-family: "Helvetica Neue";
-    src: url("../fonts/HelveticaNeue.ttc"); /*for IE */
+    src: url("../fonts/HelveticaNeue.ttc"); for IE
     font-weight: normal;
     font-style: normal;
 }
@@ -20,7 +20,7 @@ Colores
         url("../fonts/social-icons.svg") format("svg");
     font-weight: normal;
     font-style: normal;
-}
+} */
 .social-icons {
     font-family: "social-icons";
     font-style: normal;
@@ -40,7 +40,7 @@ Colores
 }
 body {
     font-size: 18px;
-    font-family: "Helvetica Neue", sans-serif;
+    /* font-family: "Helvetica Neue", sans-serif; */
 }
 /* fuentes */
 .txt_font {
