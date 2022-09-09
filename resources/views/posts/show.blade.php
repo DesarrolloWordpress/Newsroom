@@ -1,6 +1,5 @@
 @extends('layouts.main_post')
 @section('styles')
-    <link href="css/home.css" rel="stylesheet">
     <style>
         header .list_ico_share_f a {
             color: #052453;

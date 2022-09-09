@@ -1,17 +1,16 @@
 @extends('layouts.main_home')
 @section('styles')
-    <link href="css/home.css" rel="stylesheet">
     <style>
         header .list_ico_share_f a {
             color: #FFF;
         }
 
-        .menu_head .nav-item a {
+        .menu_head>div a {
             color: #fff;
             padding: 0.35rem 0.9rem !important;
         }
 
-        .menu_head .nav-item.active {
+        .menu_head>div.active {
             font-weight: 700;
             background-color: #539bfd;
         }

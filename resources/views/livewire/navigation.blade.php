@@ -30,14 +30,14 @@
                     <div class="flex items-center h-full space-x-4">
                         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                         <a href="{{ route('home') }}"
-                            class="active bg-[#539bfd] text-white px-3 py-2 text-sm font-semibold active:bg-amber-500"
+                            class="text-[#052453] active:bg-[#539bfd] text-white px-3 py-2 text-sm font-semibold"
                             aria-current="page">Inicio</a>
 
                         <a href="{{ route('external.reyma.home') }}"
-                            class="text-gray-300 hover:bg-[#539bfd80] hover:text-white px-3 py-2 text-sm font-semibold">Reyma</a>
+                            class="text-[#052453] hover:bg-[#539bfd80] hover:text-white px-3 py-2 text-sm font-semibold">Reyma</a>
 
                         <a href="{{ route('external.reyma.contactanos') }}"
-                            class="text-gray-300 hover:bg-[#539bfd80] hover:text-white px-3 py-2 text-sm font-semibold">Contáctanos</a>
+                            class="text-[#052453] hover:bg-[#539bfd80] hover:text-white px-3 py-2 text-sm font-semibold">Contáctanos</a>
                     </div>
                 </div>
             </div>
