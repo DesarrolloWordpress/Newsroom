@@ -1,7 +1,7 @@
 @extends('layouts.admin.posts.post')
 
 @section('layer1')
-    <x-card titulo="Nombre">
+    <x-admin.card titulo="Nombre">
         <div class="form-group">
             {{-- {!! Form::label('name', 'Nombre') !!} --}}
             {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el título del post']) !!}
@@ -10,8 +10,8 @@
                 <small class="text-danger">{{ $message }}</small>
             @enderror
         </div>
-    </x-card>
-    <x-card titulo="Slug">
+    </x-admin.card>
+    <x-admin.card titulo="Slug">
         <div class="form-group">
             {{-- {!! Form::label('slug', 'Slug') !!} --}}
             {!! Form::text('slug', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el slug del post']) !!}
@@ -20,9 +20,9 @@
                 <small class="text-danger">{{ $message }}</small>
             @enderror
         </div>
-    </x-card>
+    </x-admin.card>
 
-    <x-card titulo="Imagen de portada">
+    <x-admin.card titulo="Imagen de portada">
         <div class="row">
             <div class="col">
                 @isset($post->image)
@@ -46,10 +46,10 @@
                 @enderror
             </div>
         </div>
-    </x-card>
+    </x-admin.card>
 
     {{-- <x-laravel-blade-sortable::sortable name="class-s" wire:onSortOrderChange="handleSortOrderChange"> --}}
-    <x-card titulo="Extracto">
+    <x-admin.card titulo="Extracto">
         <div class="form-group">
             {!! Form::label('extract', 'Extracto', ['class' => 'd-none']) !!}
 
@@ -65,10 +65,10 @@
                 <small class="text-danger">{{ $message }}</small>
             @enderror
         </div>
-    </x-card>
+    </x-admin.card>
     {{-- </x-laravel-blade-sortable::sortable> --}}
 
-    <x-card titulo="Cuerpo del post">
+    <x-admin.card titulo="Cuerpo del post">
         <div class="form-group">
             {!! Form::label('body', 'Cuerpo del post', ['class' => 'd-none']) !!}
 
@@ -83,11 +83,11 @@
                 <small class="text-danger">{{ $message }}</small>
             @enderror
         </div>
-    </x-card>
+    </x-admin.card>
 @endsection
 
 @section('layer2')
-    <x-card titulo="Publicar">
+    <x-admin.card titulo="Publicar">
         <div class="form-group">
             <label>
                 {!! Form::radio('status', 1, true) !!}
@@ -107,9 +107,9 @@
         <div class="card-body text-right pb-0 pr-0">
             {!! Form::submit('Publicar', ['class' => 'btn btn-primary']) !!}
         </div>
-    </x-card>
+    </x-admin.card>
 
-    <x-card titulo="Categorías">
+    <x-admin.card titulo="Categorías">
         <div class="form-group">
             <div class="mr-2" style="max-height: 130px;overflow: auto;">
                 @foreach ($categories as $category)
@@ -124,9 +124,9 @@
                 <small class="text-danger">{{ $message }}</small>
             @enderror
         </div>
-    </x-card>
+    </x-admin.card>
 
-    <x-card titulo="Etiquetas">
+    <x-admin.card titulo="Etiquetas">
         <div class="form-group">
             <div class="mr-2" style="max-height: 130px;overflow: auto;">
                 @foreach ($tags as $tag)
@@ -142,5 +142,5 @@
                 <small class="text-danger">{{ $message }}</small>
             @enderror
         </div>
-    </x-card>
+    </x-admin.card>
 @endsection
