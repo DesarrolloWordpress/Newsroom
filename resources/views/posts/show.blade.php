@@ -60,7 +60,7 @@
         </div>
         <div class="my-20">
             <!-- Main Content -->
-            {{ $post->body }}
+            {!! $post->body !!}
         </div>
         <div class="flex justify-between">
             <div class="flex items-center">

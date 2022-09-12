@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use \Admin\CategoryController;
 use \Admin\TagController;
 use \Admin\PostController;
+use App\Http\Controllers\ImageController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -43,3 +45,8 @@ route::resource('tags', TagController::class)->names('admin.tags');
  * POST CRUD
  */
 route::resource('posts', PostController::class)->names('admin.posts');
+
+/**
+ * UPLOAD IMAGES
+ */
+Route::post('image/upload', [ImageController::class, 'upload'])->name('admin.image.upload');

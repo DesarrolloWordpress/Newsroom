@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\DashboardCotroller;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\mailingController;
 use App\Mail\MailingMail;
+use App\Post;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
