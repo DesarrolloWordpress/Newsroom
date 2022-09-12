@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\MailingMail;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
+use Newsletter;
 
 class mailingController extends Controller
 {
@@ -14,9 +13,30 @@ class mailingController extends Controller
 
     public function store(Request $request)
     {
-        $correo = new MailingMail($request->all());
+        $mailEmpresas = array("reyma.com.mx", "megapanel.com");
+        var_dump(implode(",", $mailEmpresas));
+        //$concatenadoEmpresas = '/(.*)@(' + implode("|", $mailEmpresas) + ')';
+        //$concatenadoEmpresas = '/(.*)@(| ) + )';
+
+        $request->validate([
+            'mailmailing' => [
+                'required',
+                'max:255',
+                'email',
+                //      'regex:' + $concatenadoEmpresas
+            ]
+        ]);
+
+        /*$correo = new MailingMail($request->all());
         Mail::to('desarrollowebwpress@gmail.com')->send($correo);
         //return redirect()->route('home')->witch('info', 'Registrado completado.');
-        return redirect()->back();
+        return redirect()->back();*/
+
+        if (!Newsletter::isSubscribed($request->mailmailing)) {
+            Newsletter::subscribe($request->mailmailing);
+            return redirect()->back()->with('info', 'Registro realizado con éxito');
+        }
+
+        return redirect()->back()->with('info', 'Correo ya registrado');
     }
 }
