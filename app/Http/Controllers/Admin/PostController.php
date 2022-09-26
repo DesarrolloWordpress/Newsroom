@@ -7,6 +7,7 @@ use App\Post;
 use App\Category;
 use App\Tag;
 use App\Http\Requests\PostRequest;
+use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
@@ -113,7 +114,7 @@ class PostController extends Controller
         }
 
         if ($request->tags) {
-            $post->tags()->attach($request->tags);
+            $post->tags()->sync($request->tags);
         }
 
         return redirect()->route('admin.posts.edit', $post)->with('info', 'El post se actualizó con éxito');
@@ -127,6 +128,8 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+
+        return redirect()->route('admin.posts.index')->with('info', 'El post se elimino con éxito.');
     }
 }
