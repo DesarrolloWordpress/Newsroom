@@ -42,7 +42,11 @@
                                     <form action="{{ route('admin.tags.destroy', $tag) }}" method="POST">
                                         @csrf
                                         @method('delete')
-                                        <button type="submit"class="btn btn-danger btn-sm">Eliminar</button>
+                                        <a class="btn btn-danger btn-sm relative">
+                                            Eliminar
+                                            <button class="absolute w-100 h-100 top-0 left-0" type="submit">
+                                            </button>
+                                        </a>
                                     </form>
                                 </td>
                             </tr>
@@ -56,8 +60,5 @@
 
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">
-@stop
-
-@section('js')
-    <script></script>
+    <script src="https://cdn.tailwindcss.com/3.1.8"></script>
 @stop

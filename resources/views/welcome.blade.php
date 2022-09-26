@@ -10,7 +10,8 @@
             padding: 0.35rem 0.9rem !important;
         }
 
-        .menu_head>div.active {
+        /* Hacer esto dinamico :x */
+        .menu_head>div> :first-child {
             font-weight: 700;
             background-color: #539bfd;
         }
@@ -51,11 +52,11 @@
                 </div>
                 <div class="my-16">
                     <h5 class="mb-4 text-4xl font-bold text-center">Bienvenido</h5>
-                    <p class="text-lg text-center md:max-w-2lg">Recibe antes que nadie las noticias relaciondas con los
+                    <p class="text-2xl text-center md:max-w-2lg">Recibe antes que nadie las noticias relaciondas con los
                         produtos <span class="font-bold">REYMA</span>.</p>
                 </div>
                 <div class="pt-5">
-                    <div class="px-2 pb-2 mx-auto flex justify-center border-b-2 border-b-[#8793ad] max-w-2xl">
+                    <div class="px-2 pb-2 mx-auto flex justify-center border-b-2 border-b-[#8793ad] max-w-lg">
                         <input type="search" class="px-2 rounded bg-transparent w-full" placeholder="Buscar"
                             aria-label="Search" aria-describedby="search-addon" />
                         <span class="" id="search-addon">
@@ -70,7 +71,7 @@
 @section('content')
     <div class="2xl:container flex justify-center flex-wrap">
         <div class="flex flex-wrap flex-row justify-center">
-            <div class="my-5 pb-5 grid grid-cols-3 gap-5 max-w-screen-xl">
+            <div class="my-5 p-5 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 max-w-screen-xl">
                 @include('posts.entrada')
             </div>
             <div class="mb-20 pt-3">

@@ -12,5 +12,15 @@
 @stop
 
 @section('content')
+    @if (session('info'))
+        <div class="alert alert-success">
+            <strong>{{ session('info') }}</strong>
+        </div>
+    @endif
+
     @livewire('admin.posts-index')
+@stop
+
+@section('css')
+    <script src="https://cdn.tailwindcss.com/3.1.8"></script>
 @stop

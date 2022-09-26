@@ -36,14 +36,21 @@
                                     @endforeach
                                 @endif
                             </td>
-                            <td width="10px"><a class="btn btn-primary btn-sm"
-                                    href="{{ route('admin.posts.edit', $post) }}">Editar</a></td>
+                            <td width="10px">
+                                <a class="btn btn-primary btn-sm" href="{{ route('admin.posts.edit', $post) }}">
+                                    Editar
+                                </a>
+                            </td>
                             <td width="10px">
                                 <form action="{{ route('admin.posts.destroy', $post) }}" method="POST">
                                     @csrf
-                                    @method('DELETE')</form>
-
-                                <button class="btn btn-danger btn-sm" type="submit">Eliminar</button>
+                                    @method('delete')
+                                    <a class="btn btn-danger btn-sm relative">
+                                        Eliminar
+                                        <button class="absolute w-100 h-100 top-0 left-0" type="submit">
+                                        </button>
+                                    </a>
+                                </form>
                             </td>
                         </tr>
                     @endforeach

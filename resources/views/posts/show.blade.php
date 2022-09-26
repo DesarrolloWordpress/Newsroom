@@ -58,7 +58,7 @@
                 </button>
             </div>
         </div>
-        <div class="my-20">
+        <div class="ck-content my-20">
             <!-- Main Content -->
             {!! $post->body !!}
         </div>
@@ -82,4 +82,8 @@
             @include('posts.entradaRelacionada')
         </div>
     </div>
+@endsection
+
+@section('scripts')
+    <script src="https://newsroom.test/vendor/ckeditor5-35.1.0/build/ckeditor.js"></script>
 @endsection

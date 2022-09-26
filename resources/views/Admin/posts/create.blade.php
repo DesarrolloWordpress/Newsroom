@@ -24,6 +24,19 @@
 @stop
 
 @section('js')
+    <script>
+        /**
+         * Nombre a Slug
+         */
+        $(document).ready(function() {
+            $("#name").stringToSlug({
+                setEvents: 'keyup keydown blur',
+                getPut: '#slug',
+                space: '-'
+            });
+        });
+    </script>
+
     <script src="{{ asset('vendor/ckeditor5-35.1.0/build/ckeditor.js') }}"></script>
     {{-- <script src="{{ asset('vendor/ckeditor5-35.1.0/build/_ckeditor-asignacion.js') }}"></script> --}}
 
