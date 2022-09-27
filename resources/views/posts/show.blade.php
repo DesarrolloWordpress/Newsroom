@@ -47,15 +47,15 @@
                 <img class="mt-5 object-cover aspect-[3/1.3] w-full"
                     src="@if ($post->image) {{ Storage::url($post->image->url) }}
                 @else
-                {{ asset('images/default/img_default.jpg') }} @endif
-                "
+                {{ asset('images/default/img_default.jpg') }} @endif"
                     alt="post_image">
             </div>
             <div class="mt-14 flex justify-center">
-                <button type="button" class="px-7 py-3 bg-[#539bfc] text-white">
+                <a href="{{ Storage::url($post->file->url) }}" title="Download all files" download
+                    class="px-7 py-3 bg-[#539bfc] text-white">
                     Descargar todos los activos
                     <i class="ml-5 fa-sharp fa-solid fa-caret-down"></i>
-                </button>
+                </a>
             </div>
         </div>
         <div class="ck-content my-20">
@@ -67,10 +67,11 @@
                 @include('layouts.socialIcon')
             </div>
             <div>
-                <button type="button" class="px-7 py-3 bg-[#539bfc] text-white">
+                <a href="{{ Storage::url($post->file->url) }}" title="Download all files" download
+                    class="px-7 py-3 bg-[#4270ad] text-white">
                     Descargar todos los activos
                     <i class="ml-5 fa-sharp fa-solid fa-caret-down"></i>
-                </button>
+                </a>
             </div>
         </div>
         <div class="my-20">

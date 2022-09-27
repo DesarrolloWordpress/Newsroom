@@ -26,21 +26,43 @@
         <div class="row">
             <div class="col">
                 @isset($post->image)
-                    <img id="pic_portada_post" class="img-thumbnail img-wrapper object-cover mt-5 h-full w-full"
+                    <img id="pic_portada_post" class="img-thumbnail img-wrapper object-cover h-full w-full"
                         src=" {{ Storage::url($post->image->url) }}" alt="post_image">
                 @else
-                    <img id="pic_portada_post" class="img-thumbnail img-wrapper object-cover mt-5 h-full w-full"
+                    <img id="pic_portada_post" class="img-thumbnail img-wrapper object-cover h-full w-full"
                         src=" {{ asset('images/default/img_default.jpg') }}" alt="post_image">
                 @endisset
             </div>
             <div class="col">
                 <div class="form-group">
-                    {!! Form::label('file', 'Imagen de portada de post') !!}
-                    {!! Form::file('file', ['class' => 'form-control-file', 'accept' => 'image/*']) !!}
+                    {!! Form::label('file_image', 'Imagen de portada de post') !!}
+                    {!! Form::file('file_image', ['class' => 'form-control-file', 'accept' => 'image/*']) !!}
                 </div>
 
+                @error('file_image')
+                    <br>
+                    <small class="text-danger">{{ $message }}</small>
+                @enderror
+            </div>
+        </div>
+    </x-admin.card>
 
-                @error('file')
+    <x-admin.card titulo="Descargar todos los archivos">
+        <div class="row">
+            <div class="col">
+                @isset($post->file)
+                    {!! Form::text('file_download', null, ['class' => 'form-control', 'placeholder' => '']) !!}
+                @else
+                    {!! Form::text('file_download', null, ['class' => 'form-control', 'placeholder' => '']) !!}
+                @endisset
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    {!! Form::label('file_download', 'Documento zip/rar') !!}
+                    {!! Form::file('file_download', ['class' => 'form-control-file', 'accept' => '.zip,.rar']) !!}
+                </div>
+
+                @error('file_download')
                     <br>
                     <small class="text-danger">{{ $message }}</small>
                 @enderror

@@ -173,9 +173,9 @@
 
     <script>
         /**
-         * Cambio de imagen
+         * Previsualización de imagen
          */
-        document.getElementById("file").addEventListener('change', cambiarImagen);
+        document.getElementById("file_image").addEventListener('change', cambiarImagen);
 
         function cambiarImagen(event) {
             var file = event.target.files[0];
