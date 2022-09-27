@@ -43,4 +43,12 @@ class Post extends Model
     {
         return $this->morphOne(Image::class, 'imageable');
     }
+
+    /**
+     * Relación 1:1 polimorfica
+     */
+    public function file()
+    {
+        return $this->morphOne(File::class, 'fileable');
+    }
 }

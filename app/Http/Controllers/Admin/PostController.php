@@ -7,7 +7,7 @@ use App\Post;
 use App\Category;
 use App\Tag;
 use App\Http\Requests\PostRequest;
-use Illuminate\Contracts\Pagination\Paginator;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
@@ -82,6 +82,8 @@ class PostController extends Controller
         $categories = Category::all(); // pluck('name', 'id');
         $tags = Tag::all();
 
+        //return $post->update($request->all());
+
         return view('admin.posts.edit', compact('post', 'categories', 'tags'));
     }
 
@@ -97,8 +99,8 @@ class PostController extends Controller
         $post->update($request->all());
         // return $request;
 
-        if ($request->file('file')) {
-            $url = Storage::put('posts', $request->file('file'));
+        if ($request->file('file_image')) {
+            $url = Storage::put('posts', $request->file('file_image'));
 
             if ($post->image) {
                 //Storage::delete($posts->image->url);
@@ -109,6 +111,29 @@ class PostController extends Controller
             } else {
                 $post->image->create([
                     'url' => $url,
+                ]);
+            }
+        }
+
+        if ($request->hasFile('file_download')) {
+            $url = Storage::put('posts/files', $request->file('file_download'));
+
+            if ($post->file) {
+                //Storage::delete($posts->file->url);
+
+                $post->file->update([
+                    'name' => $request->file('file_download')->getClientOriginalName(),
+                    'extension' => "Mega F",
+                    'url' => $url,
+                    'size' => $request->file('file_download')->getSize()
+                ]);
+                echo "<script>console.log('Debug Objects: " . $request . "' );</script>";
+            } else {
+                $post->file->create([
+                    'name' => $request->file('file_download')->getClientOriginalName(),
+                    'extension' => $request->file('file_downloaded')->getClientOriginalExtension(),
+                    'url' => $url,
+                    'size' => $request->file('file_download')->getSize()
                 ]);
             }
         }
