@@ -99,18 +99,24 @@ class PostController extends Controller
         $post->update($request->all());
         // return $request;
 
-        if ($request->file('file_image')) {
+        if ($request->hasFile('file_image')) {
             $url = Storage::put('posts', $request->file('file_image'));
 
             if ($post->image) {
                 //Storage::delete($posts->image->url);
 
                 $post->image->update([
+                    'name' => pathinfo($request->file('file_image')->getClientOriginalName(), PATHINFO_FILENAME),
+                    'extension' => $request->file('file_image')->getClientOriginalExtension(),
                     'url' => $url,
+                    'size' => $request->file('file_image')->getSize()
                 ]);
             } else {
                 $post->image->create([
+                    'name' => pathinfo($request->file('file_image')->getClientOriginalName(), PATHINFO_FILENAME),
+                    'extension' => $request->file('file_image')->getClientOriginalExtension(),
                     'url' => $url,
+                    'size' => $request->file('file_image')->getSize()
                 ]);
             }
         }
@@ -122,15 +128,15 @@ class PostController extends Controller
                 //Storage::delete($posts->file->url);
 
                 $post->file->update([
-                    'name' => $request->file('file_download')->getClientOriginalName(),
-                    'extension' => "Mega F",
+                    'name' => pathinfo($request->file('file_download')->getClientOriginalName(), PATHINFO_FILENAME),
+                    'extension' => $request->file('file_download')->getClientOriginalExtension(),
                     'url' => $url,
                     'size' => $request->file('file_download')->getSize()
                 ]);
                 echo "<script>console.log('Debug Objects: " . $request . "' );</script>";
             } else {
                 $post->file->create([
-                    'name' => $request->file('file_download')->getClientOriginalName(),
+                    'name' => pathinfo($request->file('file_download')->getClientOriginalName(), PATHINFO_FILENAME),
                     'extension' => $request->file('file_downloaded')->getClientOriginalExtension(),
                     'url' => $url,
                     'size' => $request->file('file_download')->getSize()
