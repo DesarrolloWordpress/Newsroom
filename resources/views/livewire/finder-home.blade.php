@@ -1,47 +1,4 @@
-@extends('layouts.main_home')
-
-@section('styles')
-    @livewireStyles
-    <style>
-        header .list_ico_share_f a {
-            color: #FFF;
-        }
-
-        .menu_head>div a {
-            color: #fff;
-            padding: 0.35rem 0.9rem !important;
-        }
-
-        /* Hacer esto dinamico :x */
-        .menu_head>div> :first-child {
-            font-weight: 700;
-            background-color: #539bfd;
-        }
-    </style>
-@endsection
-@section('scripts')
-    @livewireScripts
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script>
-        (function($) {
-            $(document).ready(function() {
-                headersolid();
-                window.onscroll = function() {
-                    headersolid()
-                };
-
-                function headersolid() {
-                    if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-                        $('header').addClass("active");
-                    } else {
-                        $('header').removeClass("active");
-                    }
-                }
-            });
-        })(jQuery);
-    </script>
-@endsection
-{{-- @section('banner-fondo-inicio')
+@section('banner-fondo-inicio')
     <div class="px-3"
         style="background-image: URL('{{ asset('images/home/instalaciones_banderas.jpg') }}'); background-size: cover; background-repeat: no-repeat;">
         <div class="py-[73px] w-100">
@@ -72,15 +29,7 @@
             </div>
         </div>
     </div>
-@endsection --}}
-@section('content')
-    <div class="2xl:container flex justify-center flex-wrap">
-        @livewire('finder-home')
-        <div class="max-w-screen-xl">
-            @include('mailing.formulario_suscripcion')
-        </div>
-        <div class="my-28 py-5 max-w-screen-xl">
-            @include('informacion')
-        </div>
-    </div>
 @endsection
+<div class="w-full col text-center">
+    @include('posts.entrada')
+</div>

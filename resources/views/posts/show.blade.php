@@ -68,7 +68,7 @@
             </div>
             <div>
                 <a href="{{ Storage::url($post->file->url) }}" title="Download all files" download
-                    class="px-7 py-3 bg-[#4270ad] text-white">
+                    class="px-7 py-3 bg-[#539bfc] text-white">
                     Descargar todos los activos
                     <i class="ml-5 fa-sharp fa-solid fa-caret-down"></i>
                 </a>
