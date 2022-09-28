@@ -48,19 +48,22 @@
     </x-admin.card>
 
     <x-admin.card titulo="Descargar todos los archivos">
-        <div class="row">
-            <div class="col">
-                @isset($post->file)
-                    {!! Form::text('file_download', null, ['class' => 'form-control', 'placeholder' => '']) !!}
-                @else
-                    {!! Form::text('file_download', null, ['class' => 'form-control', 'placeholder' => '']) !!}
-                @endisset
-            </div>
-            <div class="col">
+        <div class="col">
+            <div class="">
                 <div class="form-group">
                     {!! Form::label('file_download', 'Documento zip/rar') !!}
                     {!! Form::file('file_download', ['class' => 'form-control-file', 'accept' => '.zip,.rar']) !!}
                 </div>
+            </div>
+            <div class="">
+                @isset($post->file)
+                    <p class="">
+                        Archivo actual:
+                        <span class="text-bold italic">{{ $post->file->name . '.' . $post->file->extension }}</span>
+                        -
+                        <span class="text-bold italic">{{ round($post->file->size / 1e6, 1) . 'MB' }}</span>
+                    </p>
+                @endisset
 
                 @error('file_download')
                     <br>
@@ -70,7 +73,6 @@
         </div>
     </x-admin.card>
 
-    {{-- <x-laravel-blade-sortable::sortable name="class-s" wire:onSortOrderChange="handleSortOrderChange"> --}}
     <x-admin.card titulo="Extracto">
         <div class="form-group">
             {!! Form::label('extract', 'Extracto', ['class' => 'd-none']) !!}
@@ -80,7 +82,7 @@
             <div class="ck-toolbar__extract"></div>
 
             <!-- This container will become the editable. -->
-            {{-- <div class="w-100" id="extract"></div> --}}
+            {{-- <div class="w-100" id="extract"> </div> --}}
             {!! Form::textarea('extract', null, ['class' => 'form-control']) !!}
 
             @error('extract')

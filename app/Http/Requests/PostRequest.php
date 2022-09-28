@@ -35,7 +35,7 @@ class PostRequest extends FormRequest
             'slug' => 'required|unique:posts',
             'status' => 'required|in:1,2',
             'file_image' => 'image',
-            'file_download' => 'required|mimes:zip,rar'
+            'file_download' => 'mimes:zip,rar'
         ];
 
         if ($post) {
