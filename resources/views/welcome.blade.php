@@ -41,7 +41,7 @@
         })(jQuery);
     </script>
 @endsection
-{{-- @section('banner-fondo-inicio')
+@section('banner-fondo-inicio')
     <div class="px-3"
         style="background-image: URL('{{ asset('images/home/instalaciones_banderas.jpg') }}'); background-size: cover; background-repeat: no-repeat;">
         <div class="py-[73px] w-100">
@@ -56,23 +56,33 @@
                 <div class="my-16">
                     <h5 class="mb-4 text-4xl font-bold text-center">Bienvenido</h5>
                     <p class="text-2xl text-center md:max-w-2lg">
-                        Recibe antes que nadie las noticias relaciondas con los produtos <span
+                        Recibe antes que nadie las noticias relacionadas con los produtos <span
                             class="font-bold">REYMA</span>.
                     </p>
                 </div>
                 <div class="pt-5">
                     <div class="px-2 pb-2 mx-auto flex justify-center border-b-2 border-b-[#8793ad] max-w-lg">
-                        <input wire:model="search" type="search" class="px-2 rounded bg-transparent w-full"
-                            placeholder="Buscar" aria-label="Search" aria-describedby="search-addon" />
+                        {!! Form::open(['route' => 'home.search', 'class' => 'w-full flex col']) !!}
+                        {{-- <input type="search" class="px-2 rounded bg-transparent w-full" placeholder="Buscar"
+                            aria-label="Search" aria-describedby="search-addon" /> --}}
+                        {!! Form::search('search', null, [
+                            'class' => 'px-2 rounded bg-transparent w-full',
+                            'placeholder' => 'Buscar',
+                        ]) !!}
                         <span class="" id="search-addon">
-                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i class="p-3.5 relative fa-solid fa-magnifying-glass hover:bg-[#539bfd]">
+                                {!! Form::submit('', [
+                                    'class' => 'p-3.5 top-0 left-0 absolute w-full fa-solid fa-magnifying-glass cursor-pointer',
+                                ]) !!}
+                            </i>
                         </span>
+                        {!! Form::close() !!}
                     </div>
                 </div>
             </div>
         </div>
     </div>
-@endsection --}}
+@endsection
 @section('content')
     <div class="2xl:container flex justify-center flex-wrap">
         @livewire('finder-home')

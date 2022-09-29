@@ -20,10 +20,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
-
 /**
  * AUTH
  */
@@ -34,7 +30,11 @@ Auth::routes();
  */
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::get('/', 'HomeController@index')->name('home');
+/**
+ * Home
+ */
+Route::resource('/', HomeController::class)->names('home');
+// Route::get('/{search}', [HomeController::class, 'search'])->name('home.search');
 
 /**
  * POST CRUD

@@ -30,6 +30,6 @@
         </div>
     </div>
 @endsection
-<div class="w-full col text-center">
+<div class="w-full col">
     @include('posts.entrada')
 </div>
