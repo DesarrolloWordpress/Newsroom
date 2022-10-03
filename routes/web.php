@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DashboardCotroller;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\mailingController;
 use App\Mail\MailingMail;
 use App\Post;
@@ -31,9 +32,12 @@ Auth::routes();
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
 /**
- * Home
+ * HOME
  */
-Route::resource('/', HomeController::class)->names('home');
+Route::get('/', 'HomeController@index')->name('home');
+// Route::get('/{search}', 'HomeController@search')->name('home.search');
+
+// Route::get('/', [HomeController::class, 'index'])->name('home');
 // Route::get('/{search}', [HomeController::class, 'search'])->name('home.search');
 
 /**

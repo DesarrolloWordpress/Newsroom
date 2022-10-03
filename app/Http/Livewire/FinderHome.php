@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Post;
+use Illuminate\Http\Request;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -12,17 +13,27 @@ class FinderHome extends Component
     use WithPagination;
 
     // protected $paginationTheme = "tailwind";
-    public $search;
+    public $search = '223';
 
     public function updatingSearh()
     {
         $this->resetPage();
     }
 
-    public function render()
+    public function render(Request $request)
     {
-        $posts = Post::where('name', 'LIKE', '%' . $this->search . '%')->latest('id')->paginate();
+        //if ($request->get('search') != '') {
+        //}
+        $search = $request->get('search');
 
-        return view('livewire.finder-home', compact('posts'));
+        $posts = Post::where('status', 2)
+            ->where('name', 'LIKE', '%' . $search . '%')
+            ->orWhere('body', 'LIKE', '%' . $search . '%')
+            ->latest('id')
+            ->paginate();
+
+        $search = "nop";
+
+        return view('livewire.finder-home', compact('posts', 'search'));
     }
 }

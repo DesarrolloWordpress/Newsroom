@@ -39,8 +39,8 @@ class HomeController extends Controller
      */
     public function search(Request $request)
     {
-        $posts = Post::where('name', 'LIKE', '%' . $request->search . '%')->latest('id')->paginate();
+        // $posts = Post::where('name', 'LIKE', '%' . $request->search . '%')->latest('id')->paginate();
 
-        return view('welcome', compact('posts'));
+        // return view('welcome', compact('posts'));
     }
 }
