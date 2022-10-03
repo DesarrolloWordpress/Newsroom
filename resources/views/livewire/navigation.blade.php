@@ -29,7 +29,7 @@
                 <div class="menu_head hidden sm:block sm:ml-3">
                     <div class="flex items-center h-full space-x-4">
                         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                        <a href="{{ route('home.index') }}"
+                        <a href="{{ route('home') }}"
                             class="text-[#052453] active:bg-[#539bfd] text-white px-3 py-2 text-sm font-semibold"
                             aria-current="page">Inicio</a>
 
@@ -118,8 +118,7 @@
     <div x-show="open" x-on:click.away="open = false" class="menu_head sm:hidden" id="mobile-menu">
         <div class="px-2 pt-2 pb-3 space-y-1">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <a href="{{ route('home.index') }}"
-                class="active text-white block px-3 py-2 rounded-md text-base font-semibold"
+            <a href="{{ route('home') }}" class="active text-white block px-3 py-2 rounded-md text-base font-semibold"
                 aria-current="page">Inicio</a>
             <a href="{{ route('external.reyma.home') }}"
                 class="text-gray-300 hover:bg-azul3 hover:text-white block px-3 py-2 rounded-md text-base font-semibold">Reyma</a>

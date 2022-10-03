@@ -1,4 +1,4 @@
-<div class="py-5 flex flex-wrap flex-row justify-center">
+<div class="py-5 flex flex-wrap flex-col items-center">
     @if ($posts->count())
         <div class="my-5 p-5 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 max-w-screen-xl">
             @foreach ($posts as $post)

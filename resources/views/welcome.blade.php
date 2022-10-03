@@ -40,6 +40,14 @@
             });
         })(jQuery);
     </script>
+    <script>
+        // $("#search").on("click", function(event) {
+        // });
+        $('#search').click(function(e) {
+            $("#search_form").submit();
+            e.preventDefault();
+        });
+    </script>
 @endsection
 @section('banner-fondo-inicio')
     <div class="px-3"
@@ -62,21 +70,32 @@
                 </div>
                 <div class="pt-5">
                     <div class="px-2 pb-2 mx-auto flex justify-center border-b-2 border-b-[#8793ad] max-w-lg">
-                        {!! Form::open(['route' => 'home.search', 'class' => 'w-full flex col']) !!}
-                        {{-- <input type="search" class="px-2 rounded bg-transparent w-full" placeholder="Buscar"
-                            aria-label="Search" aria-describedby="search-addon" /> --}}
+                        {!! Form::open(['id' => 'search_form', 'class' => 'w-full flex col', 'method' => 'GET']) !!}
+
                         {!! Form::search('search', null, [
                             'class' => 'px-2 rounded bg-transparent w-full',
                             'placeholder' => 'Buscar',
                         ]) !!}
+
                         <span class="" id="search-addon">
-                            <i class="p-3.5 relative fa-solid fa-magnifying-glass hover:bg-[#539bfd]">
-                                {!! Form::submit('', [
+                            <i class="p-3.5 relative fa-solid fa-magnifying-glass hover:bg-[#3b85ec]">
+                                {!! Form::button('', [
                                     'class' => 'p-3.5 top-0 left-0 absolute w-full fa-solid fa-magnifying-glass cursor-pointer',
+                                    'id' => 'search',
                                 ]) !!}
                             </i>
                         </span>
                         {!! Form::close() !!}
+
+                        {{-- ### --}}
+                        {{-- <input type="search" class="my-[1px] px-2 rounded bg-transparent w-full" placeholder="Buscar"
+                            aria-label="Search" aria-describedby="search-addon" />
+                        <span class="" id="search">
+                            <i
+                                class="p-3.5 relative fa-solid fa-magnifying-glass transition duration-300  cursor-pointer hover:bg-[#3b85ec]">
+                            </i>
+                        </span> --}}
+                        {{-- ### --}}
                     </div>
                 </div>
             </div>
@@ -89,7 +108,7 @@
         <div class="max-w-screen-xl">
             @include('mailing.formulario_suscripcion')
         </div>
-        <div class="my-28 py-5 max-w-screen-xl">
+        <div class="my-28 py-5  ">
             @include('informacion')
         </div>
     </div>
