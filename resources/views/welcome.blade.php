@@ -23,6 +23,21 @@
     @livewireScripts
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
+        var e = window.event;
+        /*pauseEvent(e);
+
+        document.querySelectorAll("#testo").forEach(e => (e.onclick = pauseEvent))
+
+        function pauseEvent(e) {
+            console.log(e);
+            if (e.stopPropagation) e.stopPropagation();
+            if (e.preventDefault) e.preventDefault();
+            e.cancelBubble = true;
+            e.returnValue = false;
+            return false;
+        }*/
+    </script>
+    <script>
         (function($) {
             $(document).ready(function() {
                 headersolid();
@@ -56,7 +71,8 @@
             <div class="my-[130px] text-[#FFF] mx-auto container flex flex-col">
                 <div class="flex justify-center">
                     <div class="flex justify-end">
-                        <img class="max-w-[230px] object-contain" src="{{ asset('images/home/reyma_logo.png') }}" />
+                        <img id="testo" class="max-w-[230px] object-contain"
+                            src="{{ asset('images/home/reyma_logo.png') }}" />
                     </div>
                     <div class="mx-4 border-l-[1px] border-l-[#FFF]"></div>
                     <h2 class="my-4 text-8xl font-bold flex items-center"> Newsroom </h2>

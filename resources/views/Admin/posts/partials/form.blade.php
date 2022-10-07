@@ -4,7 +4,11 @@
     <x-admin.card titulo="Nombre">
         <div class="form-group">
             {{-- {!! Form::label('name', 'Nombre') !!} --}}
-            {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el título del post']) !!}
+            {!! Form::text('name', null, [
+                'id' => 'name',
+                'class' => 'form-control',
+                'placeholder' => 'Ingrese el título del post',
+            ]) !!}
 
             @error('name')
                 <small class="text-danger">{{ $message }}</small>
@@ -14,7 +18,11 @@
     <x-admin.card titulo="Slug">
         <div class="form-group">
             {{-- {!! Form::label('slug', 'Slug') !!} --}}
-            {!! Form::text('slug', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el slug del post']) !!}
+            {!! Form::text('slug', null, [
+                'id' => 'slug',
+                'class' => 'form-control',
+                'placeholder' => 'Ingrese el slug del post',
+            ]) !!}
 
             @error('slug')
                 <small class="text-danger">{{ $message }}</small>
@@ -102,6 +110,7 @@
 
             <!-- This container will become the editable. -->
             {!! Form::textarea('body', null, ['class' => 'form-control']) !!}
+
 
             @error('body')
                 <small class="text-danger">{{ $message }}</small>

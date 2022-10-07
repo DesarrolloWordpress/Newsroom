@@ -24,6 +24,7 @@
 @stop
 
 @section('js')
+    <x-editor.tinymce-config />
     <script>
         /**
          * Nombre a Slug
@@ -103,7 +104,7 @@
                 console.error(error);
             });
 
-        ClassicEditor.create(document.querySelector('#body'), {
+        ClassicEditor.create(document.querySelector('#bodys'), {
                 toolbar: {
                     items: [
                         'heading',
@@ -170,7 +171,7 @@
         /**
          * Cambio de imagen
          */
-        document.getElementById("file").addEventListener('change', cambiarImagen);
+        document.getElementById("file_image").addEventListener('change', cambiarImagen);
 
         function cambiarImagen(event) {
             var file = event.target.files[0];

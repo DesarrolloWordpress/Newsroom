@@ -23,7 +23,7 @@
 
 @section('content')
     <div class="mt-24"></div>
-    <div class="max-w-screen-xl mx-auto">
+    <div class="max-w-screen-xl mx-auto post-view">
         <div>
             <!-- Page Header -->
             <div>
@@ -44,21 +44,22 @@
                 </div>
             </div>
             <div class="mt-14">
-                <img class="mt-5 object-cover aspect-[3/1.3] w-full"
+                <img draggable="false" class="mt-5 object-cover aspect-[3/1.3] w-full"
                     src="@if ($post->image) {{ Storage::url($post->image->url) }}
                 @else
                 {{ asset('images/default/img_default.jpg') }} @endif"
                     alt="post_image">
             </div>
             <div class="mt-14 flex justify-center">
-                <a href="{{ Storage::url($post->file->url) }}" title="Download all files" download
+                <a href="{{ Storage::url($post->file->url) }}" title="Download all files"
+                    download="{{ $post->file->name }}.{{ $post->file->extension }}"
                     class="px-7 py-3 bg-[#539bfc] text-white">
                     Descargar todos los activos
                     <i class="ml-5 fa-sharp fa-solid fa-caret-down"></i>
                 </a>
             </div>
         </div>
-        <div class="ck-content my-20">
+        <div class="ck-content my-20 px-28 view-cont delay">
             <!-- Main Content -->
             {!! $post->body !!}
         </div>
@@ -67,7 +68,8 @@
                 @include('layouts.socialIcon')
             </div>
             <div>
-                <a href="{{ Storage::url($post->file->url) }}" title="Download all files" download
+                <a href="{{ Storage::url($post->file->url) }}" title="Download all files"
+                    download="{{ $post->file->name }}.{{ $post->file->extension }}"
                     class="px-7 py-3 bg-[#539bfc] text-white">
                     Descargar todos los activos
                     <i class="ml-5 fa-sharp fa-solid fa-caret-down"></i>

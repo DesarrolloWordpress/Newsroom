@@ -19,6 +19,7 @@
             {!! Form::model($post, ['route' => ['admin.posts.update', $post], 'files' => true, 'method' => 'put']) !!} {{-- , 'autocomplete' => 'off' --}}
 
             {{-- {!! Form::hidden('user_id', auth()->user()->id) !!} --}}
+            {{-- <textarea id="myeditorinstance">Hello, World!</textarea> --}}
 
             @include('admin.posts.partials.form')
 
@@ -29,6 +30,19 @@
 
 
 @section('js')
+    <x-editor.tinymce-config />
+
+    {{-- <script src="https://cdn.tiny.cloud/1/a6sxnbcaha12nlwocbyse23canzw8kfzf3f5ojfwxnnnti6u/tinymce/5/tinymce.min.js"
+        referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: 'textarea#myeditorinstance', // Replace this CSS selector to match the placeholder element for TinyMCE
+            plugins: 'code table lists',
+            toolbar: 'undo redo | formatselect| bold italic | alignleft aligncenter alignright | indent outdent | bullist numlist | code | table'
+        });
+    </script> --}}
+
+
     <script>
         /**
          * Nombre a Slug
@@ -108,7 +122,7 @@
                 console.error(error);
             });
 
-        ClassicEditor.create(document.querySelector('#body'), {
+        ClassicEditor.create(document.querySelector('#bodys'), {
                 toolbar: {
                     items: [
                         'heading',
