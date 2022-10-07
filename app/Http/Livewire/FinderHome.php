@@ -27,7 +27,7 @@ class FinderHome extends Component
         $search = $request->get('search');
 
         $posts = Post::where('status', 2)
-            ->where('name', 'LIKE', '%' . $search . '%')
+            ->orwhere('name', 'LIKE', '%' . $search . '%')
             ->orWhere('body', 'LIKE', '%' . $search . '%')
             ->latest('id')
             ->paginate();

@@ -11,11 +11,11 @@ use Illuminate\Support\Str;
 
 $factory->define(Post::class, function (Faker $faker) {
     $name = $this->faker->unique()->sentence();
-    $text = $this->faker->text(250);
+    $text = $this->faker->text(2500);
     return [
         'name' => $name,
         'slug' => Str::slug($name),
-        'extract' => substr($text, 0, 100),
+        'extract' => substr($text, 0, 250),
         'body' => $text,
         'status' => $this->faker->randomElement([1, 2]),
         'category_id' => Category::all()->random()->id,
