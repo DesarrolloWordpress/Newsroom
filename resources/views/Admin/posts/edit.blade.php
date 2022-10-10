@@ -30,7 +30,7 @@
 
 
 @section('js')
-    <x-editor.tinymce-config />
+    {{-- <x-editor.tinymce-config /> --}}
 
     {{-- <script src="https://cdn.tiny.cloud/1/a6sxnbcaha12nlwocbyse23canzw8kfzf3f5ojfwxnnnti6u/tinymce/5/tinymce.min.js"
         referrerpolicy="origin"></script>
@@ -122,7 +122,7 @@
                 console.error(error);
             });
 
-        ClassicEditor.create(document.querySelector('#bodys'), {
+        ClassicEditor.create(document.querySelector('#body'), {
                 toolbar: {
                     items: [
                         'heading',

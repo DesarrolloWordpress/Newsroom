@@ -13,7 +13,7 @@ class FinderHome extends Component
     use WithPagination;
 
     // protected $paginationTheme = "tailwind";
-    public $search = '223';
+    private $search = '';
 
     public function updatingSearh()
     {
@@ -24,15 +24,19 @@ class FinderHome extends Component
     {
         //if ($request->get('search') != '') {
         //}
-        $search = $request->get('search');
+        $search = $this->search = $request->get('search');
+
+        /*$posts = Post::where('status', 2)
+            ->latest('id')
+            ->paginate();*/
 
         $posts = Post::where('status', 2)
-            ->orwhere('name', 'LIKE', '%' . $search . '%')
-            ->orWhere('body', 'LIKE', '%' . $search . '%')
+            ->where(function ($query) {
+                $query->orWhere('name', 'LIKE', '%' . $this->search . '%')
+                    ->orWhere('body', 'LIKE', '%' . $this->search . '%');
+            })
             ->latest('id')
             ->paginate();
-
-        $search = "nop";
 
         return view('livewire.finder-home', compact('posts', 'search'));
     }

@@ -58,10 +58,10 @@
     <script>
         // $("#search").on("click", function(event) {
         // });
-        $('#search').click(function(e) {
+        /*$('#search').click(function(e) {
             $("#search_form").submit();
             e.preventDefault();
-        });
+        });*/
     </script>
 @endsection
 @section('banner-fondo-inicio')
@@ -95,7 +95,7 @@
 
                         <span class="" id="search-addon">
                             <i class="p-3.5 relative fa-solid fa-magnifying-glass hover:bg-[#3b85ec]">
-                                {!! Form::button('', [
+                                {!! Form::submit('', [
                                     'class' => 'p-3.5 top-0 left-0 absolute w-full fa-solid fa-magnifying-glass cursor-pointer',
                                     'id' => 'search',
                                 ]) !!}
@@ -124,7 +124,7 @@
         <div class="max-w-screen-xl">
             @include('mailing.formulario_suscripcion')
         </div>
-        <div class="my-28 py-5  ">
+        <div class="my-28 p-5">
             @include('informacion')
         </div>
     </div>
