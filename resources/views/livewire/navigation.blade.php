@@ -70,10 +70,12 @@
                                 class="flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                                 id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                                 <span class="sr-only">Open user menu</span>
-                                <ul class="flex justify-center">
+                                <ul class="group flex justify-center">
                                     <li class="list_ico_share_f px-3 min-w-[30px] flex justify-center items-center">
                                         <a class="flex justify-center items-center text-xl" data-tooltip="user">
-                                            <i class="fa-solid fa-user-large hover:text-[#539bfc]"></i>
+                                            <i class="fa-solid fa-user-large group-hover:text-[#539bfc]"></i>
+                                            <i
+                                                class="fa-sharp fa-solid fa-caret-down ml-2 text-xs group-hover:text-[#539bfc]"></i>
                                         </a>
                                     </li>
                                 </ul>
@@ -83,13 +85,20 @@
                             class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
                             role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
                             <!-- Active: "bg-gray-100", Not Active: "" -->
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
-                                id="user-menu-item-0">Tu perfil</a>
-                            <a href="{{ route('dashboard.index') }}" class="block px-4 py-2 text-sm text-gray-700"
-                                role="menuitem" tabindex="-1" id="user-menu-item-0">Dashboard</a>
+                            {{-- <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                id="user-menu-item-0">Tu perfil</a> --}}
+                            <p class="block px-4 py-2 text-sm text-gray-800"> {{ Auth::user()->name }}</p>
+                            <hr>
+                            @role('Administrador')
+                                <a href="{{ route('dashboard.index') }}" class="block px-4 py-2 text-sm text-gray-700"
+                                    role="menuitem" tabindex="-1" id="user-menu-item-0">Dashboard</a>
+                            @endrole
                             <a href="{{ route('logout') }}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem"
-                                tabindex="-1" id="user-menu-item-2">Cerrar sesión</a>
-                            <pre> {{ Auth::user()->name }}</pre>
+                                tabindex="-1" id="user-menu-item-2">
+                                <i class="fa-solid fa-right-from-bracket w-[20px]"></i>
+                                Cerrar sesión
+                            </a>
+
                         </div>
                     </div>
                 </div>

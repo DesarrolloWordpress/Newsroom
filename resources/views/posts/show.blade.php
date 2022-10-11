@@ -51,12 +51,28 @@
                     alt="post_image">
             </div>
             <div class="mt-14 flex justify-center">
-                <a href="{{ Storage::url($post->file->url) }}" title="Download all files"
-                    download="{{ $post->file->name }}.{{ $post->file->extension }}"
-                    class="px-7 py-3 bg-[#539bfc] text-white">
-                    Descargar todos los activos
-                    <i class="ml-5 fa-sharp fa-solid fa-caret-down"></i>
-                </a>
+                @can('user.post.descargar.si')
+                    <a href="{{ Storage::url($post->file->url) }}" title="Download all files"
+                        download="{{ $post->file->name }}.{{ $post->file->extension }}"
+                        class="px-7 py-3 bg-[#539bfc] text-white">
+                        Descargar todos los activos
+                        <i class="ml-5 fa-sharp fa-solid fa-caret-down"></i>
+                    </a>
+                @else
+                    <div class="ml-3 relative" x-data="{ open: false }">
+                        <a x-on:click="open = true" title="Download all files"
+                            download="{{ $post->file->name }}.{{ $post->file->extension }}"
+                            class="px-7 py-3 bg-[#539bfc] text-white">
+                            Descargar todos los activos
+                            <i class="ml-5 fa-sharp fa-solid fa-caret-down"></i>
+                        </a>
+                        <div x-show="open" x-on:click.away="open = false" class="bg-[#052453] menu_head">
+                            <a href="{{ route('register') }}"
+                                class="pt-5 pb-3 transition-all duration-300 block text-center px-4 py-2 text-lg font-bold text-white"
+                                role="menuitem" tabindex="-1" id="user-menu-item-0">Registrarse</a>
+                        </div>
+                    </div>
+                @endcan
             </div>
         </div>
         <div class="ck-content my-20 px-28 view-cont delay">
@@ -68,12 +84,27 @@
                 @include('layouts.socialIcon')
             </div>
             <div>
-                <a href="{{ Storage::url($post->file->url) }}" title="Download all files"
-                    download="{{ $post->file->name }}.{{ $post->file->extension }}"
-                    class="px-7 py-3 bg-[#539bfc] text-white">
-                    Descargar todos los activos
-                    <i class="ml-5 fa-sharp fa-solid fa-caret-down"></i>
-                </a>
+                @can('user.post.descargar.si')
+                    <a href="{{ Storage::url($post->file->url) }}" title="Download all files"
+                        download="{{ $post->file->name }}.{{ $post->file->extension }}"
+                        class="px-7 py-3 bg-[#539bfc] text-white">
+                        Descargar todos los activos
+                        <i class="ml-5 fa-sharp fa-solid fa-caret-down"></i>
+                    </a>
+                @else
+                    <div class="ml-3 relative" x-data="{ open: false }">
+                        <a x-on:click="open = true" title="Download all files"
+                            download="{{ $post->file->name }}.{{ $post->file->extension }}"
+                            class="px-7 py-3 bg-[#539bfc] text-white">
+                            Descargar todos los activos
+                            <i class="ml-5 fa-sharp fa-solid fa-caret-down"></i>
+                        </a>
+                        <div x-show="open" x-on:click.away="open = false" class="pt-5 pb-3 bg-[#052453] menu_head">
+                            <a href="{{ route('register') }}" class="block text-center px-4 py-2 text-lg font-bold text-white"
+                                role="menuitem" tabindex="-1" id="user-menu-item-0">Registrarse</a>
+                        </div>
+                    </div>
+                @endcan
             </div>
         </div>
         <div class="my-20">

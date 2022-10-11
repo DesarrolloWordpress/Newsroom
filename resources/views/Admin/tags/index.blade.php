@@ -39,15 +39,17 @@
                                         class="btn btn-primary btn-sm">Editar</a>
                                 </td>
                                 <td width='10px'>
-                                    <form action="{{ route('admin.tags.destroy', $tag) }}" method="POST">
-                                        @csrf
-                                        @method('delete')
-                                        <a class="btn btn-danger btn-sm relative">
-                                            Eliminar
-                                            <button class="absolute w-100 h-100 top-0 left-0" type="submit">
-                                            </button>
-                                        </a>
-                                    </form>
+                                    @can('admin.tags.destroy')
+                                        <form action="{{ route('admin.tags.destroy', $tag) }}" method="POST">
+                                            @csrf
+                                            @method('delete')
+                                            <a class="btn btn-danger btn-sm relative">
+                                                Eliminar
+                                                <button class="absolute w-100 h-100 top-0 left-0" type="submit">
+                                                </button>
+                                            </a>
+                                        </form>
+                                    @endcan
                                 </td>
                             </tr>
                         @endforeach

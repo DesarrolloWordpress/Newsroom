@@ -42,15 +42,17 @@
                                 </a>
                             </td>
                             <td width="10px">
-                                <form action="{{ route('admin.posts.destroy', $post) }}" method="POST">
-                                    @csrf
-                                    @method('delete')
-                                    <a class="btn btn-danger btn-sm relative">
-                                        Eliminar
-                                        <button class="absolute w-100 h-100 top-0 left-0" type="submit">
-                                        </button>
-                                    </a>
-                                </form>
+                                @can('admin.posts.destroy')
+                                    <form action="{{ route('admin.posts.destroy', $post) }}" method="POST">
+                                        @csrf
+                                        @method('delete')
+                                        <a class="btn btn-danger btn-sm relative">
+                                            Eliminar
+                                            <button class="absolute w-100 h-100 top-0 left-0" type="submit">
+                                            </button>
+                                        </a>
+                                    </form>
+                                @endcan
                             </td>
                         </tr>
                     @endforeach
