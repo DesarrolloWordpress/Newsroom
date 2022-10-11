@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
 
         Storage::makeDirectory('posts');
 
-        //$this->call(RoleSeeder::class);
+        $this->call(RoleSeeder::class);
 
         $this->call(UserSeeder::class);
         factory(Category::class, 5)->create();
